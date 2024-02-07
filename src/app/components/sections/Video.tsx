@@ -99,7 +99,7 @@ const Video = () => {
 					</div>
 					<div
 						ref={textRef}
-						className='lg:w-1/2 w-full h-full flex items-end lg:items-center z-10 py-4 text-justify px-2 mix-blend-difference'>
+						className='lg:w-1/2 w-full h-full flex items-center z-10 py-4 text-justify px-4 mix-blend-difference'>
 						<p className='text-white'>
 							Pondok Kopi Penglipuran is a small and medium-sized
 							enterprise that specializes in processing coffee
