@@ -4,6 +4,7 @@ import Hero from './components/sections/Hero';
 import Video from './components/sections/Video';
 import RegisterGsap from './utils/components/RegisterGsap';
 import LenisScroll from './utils/components/LenisScroll';
+import Gallery from './components/sections/Gallery';
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 					<main className='overflow-hidden'>
 						<Hero />
 						<Video />
+						<Gallery />
 						{Array.from({ length: 2 }).map((_, item) => (
 							<section
 								className='h-screen w-screen'
