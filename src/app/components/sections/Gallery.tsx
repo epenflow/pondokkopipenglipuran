@@ -37,7 +37,7 @@ const Gallery = () => {
 	return (
 		<section
 			ref={sectionRef}
-			className='h-screen w-screen z-50 bg-default-200 flex items-center overflow-hidden gap-14 justify-center relative'
+			className='h-screen w-screen bg-blue-600 flex items-center overflow-hidden gap-14 justify-center relative'
 			id='section-two'>
 			<Each
 				of={Array.from({ length: 3 })}
@@ -53,7 +53,9 @@ const Gallery = () => {
 									className='h-80 w-80'
 									style={{
 										backgroundColor:
-											index % 2 === 0 ? 'orange' : 'blue',
+											index % 2 === 0
+												? '#ea580c'
+												: '#15803d',
 									}}
 									key={index}></div>
 							)}

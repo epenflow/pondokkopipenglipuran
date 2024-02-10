@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollProgress from '../ScrollProgress';
 
 const Navbar = () => {
 	return (
@@ -11,6 +12,7 @@ const Navbar = () => {
 				</div>
 				<h1>menu</h1>
 			</div>
+			<ScrollProgress />
 		</header>
 	);
 };
