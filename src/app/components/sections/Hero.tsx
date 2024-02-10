@@ -25,6 +25,7 @@ const Hero = () => {
 					bonjourRef.current,
 					{
 						yPercent: -125,
+						ease: 'power4.out',
 					},
 					1
 				)
@@ -33,12 +34,13 @@ const Hero = () => {
 					{
 						autoAlpha: 0,
 					},
-					2
+					1.5
 				)
 				.to(
 					imgContainerRef.current,
 					{
 						clipPath: 'inset(0% 0% 0% 0%)',
+						ease: 'power1.in',
 					},
 					3
 				)
@@ -46,6 +48,7 @@ const Hero = () => {
 					imgContainerRef.current,
 					{
 						xPercent: 0,
+						ease: 'power1.in',
 					},
 					4
 				);
@@ -82,6 +85,7 @@ const Hero = () => {
 					imgContainerRef.current,
 					{
 						yPercent: 100,
+						ease: 'power1.out',
 					},
 					6
 				);
@@ -106,10 +110,9 @@ const Hero = () => {
 			);
 			ScrollTrigger.create({
 				trigger: sectionRef.current,
-				start: 'top-=25px top',
+				start: 'top-=10% top',
 				end: '+1000%',
 				scrub: true,
-				markers: true,
 				pin: true,
 				animation: animations,
 				invalidateOnRefresh: false,

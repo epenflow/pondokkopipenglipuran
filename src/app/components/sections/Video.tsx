@@ -18,9 +18,7 @@ const Video = () => {
 	React.useLayoutEffect(() => {
 		const ctx = gsap.context(() => {
 			const animations = gsap
-				.timeline({
-					smoothChildTiming: true,
-				})
+				.timeline()
 				.set(
 					videoContainerRef.current,
 					{
@@ -44,14 +42,16 @@ const Video = () => {
 					videoContainerRef.current,
 					{
 						scale: 1,
+						ease: 'power4.in',
 					},
-					1
+					0.5
 				)
 				.to(
 					textRef.current,
 					{
 						autoAlpha: 1,
 						yPercent: 0,
+						ease: 'sine.in',
 					},
 					2
 				)
@@ -62,6 +62,7 @@ const Video = () => {
 						top: 0,
 						left: 0,
 						transformOrigin: 'center',
+						ease: 'bounce.out',
 					},
 					3
 				)
@@ -73,6 +74,7 @@ const Video = () => {
 					{
 						yPercent: 25,
 						autoAlpha: 0,
+						ease: 'power4.out',
 					},
 					4
 				)
@@ -81,6 +83,7 @@ const Video = () => {
 					videoRef.current,
 					{
 						clipPath: 'inset(0 0 60% 0)',
+						ease: 'power1.in',
 					},
 					5
 				)
@@ -90,6 +93,7 @@ const Video = () => {
 						zIndex: 20,
 						webkitTextStroke: '2px black',
 						webkitTextFillColor: '#f2f2f2',
+						ease: 'back.out',
 					},
 					6
 				)
@@ -99,6 +103,7 @@ const Video = () => {
 						webkitTextFillColor: '#15803D',
 						webkitTextStroke: '1px black',
 						fontWeight: '900',
+						ease: 'power4.in',
 					},
 					7
 				)
@@ -107,13 +112,15 @@ const Video = () => {
 					{
 						zIndex: 30,
 						top: 0,
+						ease: 'power1.inOut',
 					},
-					8
+					8.5
 				)
 				.to(
 					headingTwoRef.current,
 					{
 						fontWeight: '900',
+						ease: 'power3.in',
 					},
 					9
 				)
@@ -122,6 +129,7 @@ const Video = () => {
 					{
 						clipPath:
 							'polygon(50% 0, 100% 45%, 100% 100%, 0 100%, 0 45%)',
+						ease: 'power4.out',
 					},
 					10
 				)
@@ -130,6 +138,7 @@ const Video = () => {
 					{
 						clipPath:
 							'polygon(50% 0%, 100% 50%, 50% 100%, 50% 100%, 0 50%)',
+						ease: 'power4.out',
 					},
 					11
 				)
@@ -139,8 +148,9 @@ const Video = () => {
 						rotate: 360,
 						xPercent: 100,
 						yPercent: 100,
+						ease: 'sine.out',
 					},
-					12
+					11.5
 				);
 			coffeeBeansRef.current?.forEach((el, index) => {
 				animations
@@ -167,6 +177,7 @@ const Video = () => {
 							),
 							rotate: 360 * 5,
 							stagger: 0.5 * index,
+							ease: 'power4.inOut',
 						},
 						11
 					);
@@ -179,7 +190,6 @@ const Video = () => {
 				scrub: true,
 				invalidateOnRefresh: true,
 				pin: true,
-				anticipatePin: 1,
 			});
 		});
 
