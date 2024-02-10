@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
-const ScrollProgress = () => {
+const ScrollProgress = React.memo(() => {
 	const linRef = React.useRef<HTMLDivElement>(null);
 
 	function handleScroll() {
@@ -26,15 +26,14 @@ const ScrollProgress = () => {
 	}, []);
 	console.info('render');
 	return (
-		<div className='fixed bottom-5 right-5 z-50'>
+		<div className='fixed bottom-5 right-5 z-10'>
 			<div className='h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] bg-[#ff5d0b] rounded-full overflow-hidden'>
 				<div
-					className='w-full z-10 bg-[#170bff] relative'
+					className='w-full z-20 bg-[#170bff] relative'
 					ref={linRef}></div>
-				<h1 className='text-center text-white text-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 font-bold'></h1>
 			</div>
 		</div>
 	);
-};
+});
 
 export default dynamic(() => Promise.resolve(ScrollProgress), { ssr: false });

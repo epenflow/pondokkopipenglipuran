@@ -5,6 +5,7 @@ import Video from './components/sections/Video';
 import RegisterGsap from './utils/components/RegisterGsap';
 import LenisScroll from './utils/components/LenisScroll';
 import Gallery from './components/sections/Gallery';
+import Footer from './components/Footer';
 
 export default function Home() {
 	return (
@@ -27,6 +28,7 @@ export default function Home() {
 								}}></section>
 						))}
 					</main>
+					<Footer />
 				</LenisScroll>
 			</RegisterGsap>
 		</>
