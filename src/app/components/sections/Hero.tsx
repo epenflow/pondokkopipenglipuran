@@ -26,6 +26,7 @@ const Hero = () => {
 					{
 						yPercent: -125,
 						ease: 'power4.out',
+						duration: 1.4,
 					},
 					1
 				)
@@ -34,23 +35,25 @@ const Hero = () => {
 					{
 						autoAlpha: 0,
 					},
-					1.5
+					1
 				)
 				.to(
 					imgContainerRef.current,
 					{
 						clipPath: 'inset(0% 0% 0% 0%)',
 						ease: 'power1.in',
+						duration: 1.4,
 					},
-					3
+					2
 				)
 				.to(
 					imgContainerRef.current,
 					{
 						xPercent: 0,
 						ease: 'power1.in',
+						duration: 1.4,
 					},
-					4
+					3
 				);
 			textRef.current.forEach((el, index) => {
 				animations
@@ -70,7 +73,7 @@ const Hero = () => {
 							xPercent: 0,
 							autoAlpha: 1,
 						},
-						4
+						3
 					);
 			});
 			animations
@@ -78,6 +81,7 @@ const Hero = () => {
 					imgContainerRef.current,
 					{
 						scale: 1,
+						duration: 2.5,
 					},
 					5
 				)
@@ -86,6 +90,7 @@ const Hero = () => {
 					{
 						yPercent: 100,
 						ease: 'power1.out',
+						duration: 2.5,
 					},
 					6
 				);
@@ -96,6 +101,7 @@ const Hero = () => {
 						yPercent: (index + 1) * -100,
 						autoAlpha: 0,
 						scale: 0.5,
+						duration: 1.5,
 					},
 					6
 				);
@@ -105,6 +111,8 @@ const Hero = () => {
 				{
 					yPercent: 0,
 					scale: 5,
+					duration: 3.5,
+					delay: 2.5,
 				},
 				7
 			);
@@ -136,7 +144,7 @@ const Hero = () => {
 			<div className='flex flex-col w-[460px] gap-2 p-4 relative'>
 				<div
 					ref={imgContainerRef}
-					className='h-[340px] w-full bg-orange-600 border-primary'>
+					className='h-[340px] w-full bg-black border-primary'>
 					<Image
 						src={'/pondokkopi.jpg'}
 						fill

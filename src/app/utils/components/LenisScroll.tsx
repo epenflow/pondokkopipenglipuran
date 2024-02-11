@@ -8,26 +8,27 @@ interface Props {
 	children: React.ReactNode;
 }
 const LenisScroll = ({ children }: Props) => {
+	const scrollRef = React.useRef<Lenis>(null);
 	React.useLayoutEffect(() => {
 		const lenis = new Lenis({
+			duration: 6,
+			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+			touchMultiplier: 2,
 			smoothWheel: true,
-			lerp: 0.025,
 			syncTouch: true,
-			// syncTouchLerp: 0.025,
-			autoResize: true,
-			// touchInertiaMultiplier: 35,
 		});
 		function update(time: number) {
 			lenis.raf(time * 1000);
 		}
 		function initSmoothScrolling() {
 			lenis.on('scroll', () => ScrollTrigger.update);
-			gsap.ticker.add(update);
+			gsap.ticker.add(update, false, true);
 			gsap.ticker.lagSmoothing(0);
 		}
 		initSmoothScrolling();
 		return () => {
 			gsap.ticker.remove(update);
+			lenis.destroy();
 		};
 	}, []);
 	return children;
