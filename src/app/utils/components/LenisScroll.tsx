@@ -11,11 +11,12 @@ const LenisScroll = ({ children }: Props) => {
 	const scrollRef = React.useRef<Lenis>(null);
 	React.useLayoutEffect(() => {
 		const lenis = new Lenis({
-			duration: 6,
+			duration: 2,
 			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
 			touchMultiplier: 2,
 			smoothWheel: true,
 			syncTouch: true,
+			syncTouchLerp: 1.5,
 		});
 		function update(time: number) {
 			lenis.raf(time * 1000);
