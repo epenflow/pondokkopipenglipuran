@@ -7,27 +7,17 @@ import LenisScroll from './utils/components/LenisScroll';
 import Gallery from './components/sections/Gallery';
 import Footer from './components/Footer';
 import VideoSections from './components/sections/VideoSections';
+import HeroSections from './components/sections/HeroSections';
 
 export default function Home() {
 	return (
 		<>
 			<RegisterGsap>
-				<Navbar />
-				<main className='overflow-hidden'>
+				<main className='overflow-x-hidden'>
 					<LenisScroll>
-						<Hero />
+						<HeroSections />
 						<VideoSections />
-						{/* <Video /> */}
-						{Array.from({ length: 2 }).map((_, item) => (
-							<section
-								className='h-screen w-screen'
-								key={item}
-								style={{
-									backgroundColor: `${
-										item % 2 === 0 ? 'black' : 'white'
-									}`,
-								}}></section>
-						))}
+						<Gallery />
 					</LenisScroll>
 				</main>
 				<Footer />

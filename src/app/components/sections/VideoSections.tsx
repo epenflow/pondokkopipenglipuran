@@ -3,7 +3,7 @@ import React from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const CONTENT_TEXT = {
-	headingone: 'we serve the best quality coffe',
+	headingone: 'we serve the best quality coffee',
 	pone: `Pondok Kopi Penglipuran is a small and
     medium-sized enterprise that specializes in
     processing coffee beans, from raw to
@@ -29,100 +29,72 @@ const VideoSections = () => {
 		const ctx = gsap.context(() => {
 			const animations = gsap
 				.timeline()
+				.to(videoContainerRef.current, {
+					transformOrigin: 'center',
+					top: 0,
+					left: 0,
+					duration: 2.5,
+					ease: 'power3.in',
+					width: '100%',
+					height: '100%',
+				})
 				.to(
 					headingoneRef.current,
 					{
 						autoAlpha: 0,
-						duration: 1.5,
+						ease: 'power2.in',
 					},
-					0
+					'-=0.5'
 				)
-				.to(
-					videoContainerRef.current,
-					{
-						transformOrigin: 'center',
-						width: '100%',
-						height: '100%',
-						top: 0,
-						ease: 'sine.out',
-						duration: 1.5,
-					},
-					1
-				)
+				.to(videoContainerRef.current, {
+					clipPath: 'inset(80% 0 0 0)',
+					duration: 2.5,
+					delay: 2.5,
+				})
 				.to(
 					headingoneRef.current,
 					{
 						autoAlpha: 1,
-						ease: 'power1.in',
-						duration: 0.5,
-						delay: 2.5,
-					},
-					2
-				)
-				.to(
-					videoContainerRef.current,
-					{
-						clipPath: 'inset(0 0 70% 0)',
-						ease: 'sine.out',
-						duration: 2.5,
-						delay: 0.5,
-					},
-					3
-				)
-				.to(
-					headingoneRef.current,
-					{
-						fontWeight: '900',
+						fontWeight: 900,
 						duration: 1.5,
-						delay: 3,
 					},
-					3
+					'-=2'
 				)
 				.to(
 					contentContainerTwo.current,
 					{
 						yPercent: -100,
-						duration: 3,
-						delay: 3.5,
+						duration: 2.5,
+						ease: 'power3.in',
 					},
-					5
+					'-=2.25'
 				)
 				.to(
 					itemTwoRef.current,
 					{
 						borderRadius: 0,
-						duration: 3.5,
-						delay: 3.5,
+						duration: 2.5,
+						ease: 'power3.in',
 					},
-					5
+					'-=2.5'
 				)
-				.to(
-					headingtwoRef.current,
-					{
-						fontWeight: 900,
-						delay: 4.5,
-						duration: 1.5,
-					},
-					6
-				)
+				.to(headingtwoRef.current, {
+					fontWeight: 900,
+				})
 				.to(
 					pentagonRef.current,
 					{
 						clipPath:
 							'polygon(50% 0%, 100% 50%, 50% 100%, 50% 100%, 0 50%)',
-						rotate: 360 * 3,
-						yPercent: 100,
-						xPercent: 100,
-						delay: 4.5,
-						duration: 5,
+						duration: 1.5,
+						ease: 'power2.in',
 					},
-					6
+					'-=0.5'
 				);
 			ScrollTrigger.create({
 				trigger: sectionRef.current,
 				start: 'top top',
-				end: '+=1000%',
-				markers: true,
+				end: 'bottom+=1000%',
 				scrub: 1,
 				pin: true,
 				animation: animations,
@@ -132,6 +104,7 @@ const VideoSections = () => {
 			ctx.revert();
 		};
 	}, []);
+
 	return (
 		<section ref={sectionRef}>
 			<div
@@ -139,7 +112,7 @@ const VideoSections = () => {
 				className='h-screen w-screen bg-default-200 flex flex-col items-center justify-center relative'>
 				<h1
 					ref={headingoneRef}
-					className='lg:text-8xl text-4xl uppercase text-center z-10 mix-blend-difference text-default-200'>
+					className='lg:text-8xl text-4xl uppercase text-center z-10 mix-blend-difference text-default-200 p-1'>
 					{CONTENT_TEXT.headingone}
 				</h1>
 				<div
@@ -150,16 +123,16 @@ const VideoSections = () => {
 						autoPlay
 						loop
 						muted
-						className='w-full h-full object-cover'
+						className='w-full h-full object-cover grayscale'
 					/>
 				</div>
 			</div>
 			<div
 				ref={contentContainerTwo}
-				className='h-screen z-20 relative'>
+				className='z-20 fixed top-0 left-0 translate-y-[100%]'>
 				<div
 					ref={itemTwoRef}
-					className='flex items-center justify-center bg-black w-full h-full rounded-t-[25%] relative flex-col gap-5'>
+					className='flex items-center justify-center bg-black w-full h-full rounded-t-[25%] relative flex-col gap-5 h-screen'>
 					<h1
 						ref={headingtwoRef}
 						className='text-default-200 text-4xl lg:text-8xl capitalize z-10 mix-blend-difference'>

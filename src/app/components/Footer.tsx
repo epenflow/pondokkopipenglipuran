@@ -3,8 +3,12 @@ import ScrollProgress from './ScrollProgress';
 
 const Footer = () => {
 	return (
-		<footer>
-			<ScrollProgress />
+		<footer
+			className='h-screen bg-black overflow-hidden'
+			id='footer-sections'>
+			<div className='h-screen w-screen'>
+				<h1>sds</h1>
+			</div>
 		</footer>
 	);
 };
