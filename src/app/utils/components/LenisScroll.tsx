@@ -16,7 +16,6 @@ const LenisScroll = ({ children }: Props) => {
 			touchMultiplier: 2,
 			smoothWheel: true,
 			syncTouch: true,
-			syncTouchLerp: 1.5,
 		});
 		function update(time: number) {
 			lenis.raf(time * 1000);

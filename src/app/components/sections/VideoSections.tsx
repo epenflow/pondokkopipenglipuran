@@ -129,10 +129,10 @@ const VideoSections = () => {
 			</div>
 			<div
 				ref={contentContainerTwo}
-				className='z-20 fixed top-0 left-0 translate-y-[100%]'>
+				className='z-20 fixed top-0 left-0 translate-y-[100%] h-screen'>
 				<div
 					ref={itemTwoRef}
-					className='flex items-center justify-center bg-black w-full h-full rounded-t-[25%] relative flex-col gap-5 h-screen'>
+					className='flex items-center justify-center bg-black w-full h-full rounded-t-[25%] relative flex-col gap-5'>
 					<h1
 						ref={headingtwoRef}
 						className='text-default-200 text-4xl lg:text-8xl capitalize z-10 mix-blend-difference'>

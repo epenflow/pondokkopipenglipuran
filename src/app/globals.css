@@ -22,3 +22,10 @@
 body {
 	background-color: #f2f2f2;
 }
+::-webkit-scrollbar {
+	width: 5px;
+	background-color: none;
+}
+::-webkit-scrollbar-thumb {
+	background-color: black;
+}

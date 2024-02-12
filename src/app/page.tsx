@@ -5,7 +5,7 @@ import Video from './components/sections/Video';
 import RegisterGsap from './utils/components/RegisterGsap';
 import LenisScroll from './utils/components/LenisScroll';
 import Gallery from './components/sections/Gallery';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 import VideoSections from './components/sections/VideoSections';
 import HeroSections from './components/sections/HeroSections';
 
@@ -13,6 +13,7 @@ export default function Home() {
 	return (
 		<>
 			<RegisterGsap>
+				<Navbar />
 				<main className='overflow-x-hidden'>
 					<LenisScroll>
 						<HeroSections />

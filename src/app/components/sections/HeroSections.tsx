@@ -22,11 +22,11 @@ const HeroSections = () => {
 			const animations = gsap
 				.timeline()
 				.set(imgRef.current, {
-					xPercent: -100,
+					yPercent: 100,
 					autoAlpha: 0,
 				})
 				.to(imgRef.current, {
-					xPercent: 0,
+					yPercent: 0,
 					autoAlpha: 1,
 					duration: 1.5,
 					ease: 'power3.in',
@@ -40,14 +40,19 @@ const HeroSections = () => {
 						ease: 'power4.in',
 					},
 					'+=.5'
-				);
+				)
+				.to(sectionRef.current, {
+					clipPath: 'inset(0 0 0 100%)',
+					duration: 1.5,
+					ease: 'expo',
+				});
 
 			ScrollTrigger.create({
 				trigger: sectionRef.current,
 				pin: true,
 				scrub: 1,
 				start: 'top top',
-				end: '+=500%',
+				end: '+=400%',
 				animation: animations,
 			});
 		});
@@ -58,25 +63,31 @@ const HeroSections = () => {
 	return (
 		<section
 			ref={sectionRef}
-			className='h-screen w-screen flex flex-col items-center justify-center bg-black text-default-200'>
+			className='h-screen w-screen flex flex-col items-center justify-center bg-black text-default-200 relative gap-2'>
 			<p className='lg:text-4xl text-justify w-4/5 font-[500]'>
 				{CONSTANT_TEXT.pone}
 			</p>
-			<div className='flex flex-col lg:flex-row items-center justify-center capitalize'>
+			{/* <Image
+				src={'/coffee.png'}
+				alt='coffe beans'
+				width={50}
+				height={50}
+				className='absolute z-10 grayscale'
+			/> */}
+			<div className='flex flex-col lg:flex-row items-center justify-center capitalize px-2'>
 				<Image
 					ref={imgRef}
 					{...CONSTANT_TEXT.images}
 					objectFit='contain'
-					className='p-2 grayscale'
+					className='p-2 grayscale border-[1px] border-solid border-default-200'
 					width={420}
 					height={420}
 				/>
 				<h1 className='lg:text-8xl font-[500]'>pondok kopi</h1>
 			</div>
-			<p className='lg:text-4xl w-4/5 font-[500] text-center'>
+			<p className='lg:text-4xl w-4/5 font-[500] text-center pb-10'>
 				{CONSTANT_TEXT.ptwo}
 			</p>
-			<h1 className='py-5 capitalize'>(scroll down)</h1>
 		</section>
 	);
 };

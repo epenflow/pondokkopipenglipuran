@@ -26,12 +26,11 @@ const ScrollProgress = React.memo(() => {
 	}, []);
 	console.info('render');
 	return (
-		<div className='fixed bottom-5 right-5 z-10'>
-			<div className='h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] bg-[#ff5d0b] rounded-full overflow-hidden'>
-				<div
-					className='w-full z-20 bg-[#170bff] relative'
-					ref={linRef}></div>
-			</div>
+		<div className='w-full overflow-hidden border-y-[1px] border-solid border-default-200 relative flex items-center justify-center'>
+			<div
+				className='w-full bg-default-200 z-20 absolute top-0'
+				ref={linRef}></div>
+			<h1 className='capitalize absolute'>(scroll down)</h1>
 		</div>
 	);
 });
