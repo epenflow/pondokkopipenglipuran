@@ -16,17 +16,17 @@ const Footer = () => {
 	}, [header]);
 	return (
 		<footer
-			className='overflow-x-hidden bg-black'
+			className='overflow-x-hidden bg-default-200 font-medium'
 			id='footer-sections'>
 			<div
-				className='w-screen text-default-200 p-4 gap-5 flex lg:flex-row flex-col items-center justify-center'
+				className='w-screen text-black p-4 gap-5 flex lg:flex-row flex-col items-center justify-center'
 				style={{
 					marginBottom: `${header}px`,
 				}}>
 				<p className='text-justify lg:w-1/2 w-full p-2'>
 					{CONTENT_TEXT.ptwo}
 				</p>
-				<div className='flex flex-col gap-5 border-[1px] border-solid border-default-200 p-2'>
+				<div className='flex flex-col gap-5 p-2'>
 					<h1 className='uppercase text-5xl text-justify lg:text-start'>
 						{CONTENT_TEXT.heading}
 					</h1>

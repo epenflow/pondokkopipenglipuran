@@ -132,7 +132,7 @@ const VideoSections = () => {
 				className='z-20 fixed top-0 left-0 translate-y-[100%] h-screen'>
 				<div
 					ref={itemTwoRef}
-					className='flex items-center justify-center bg-black w-full h-full rounded-t-[25%] relative flex-col gap-5'>
+					className='flex items-center justify-center bg-default-200 w-full h-full rounded-t-[25%] relative flex-col gap-5'>
 					<h1
 						ref={headingtwoRef}
 						className='text-default-200 text-4xl lg:text-8xl capitalize z-10 mix-blend-difference'>
@@ -146,7 +146,7 @@ const VideoSections = () => {
 
 					<div
 						ref={pentagonRef}
-						className='h-80 w-80 absolute bg-default-200 pentagon-clip-path'></div>
+						className='h-80 w-80 absolute bg-black pentagon-clip-path'></div>
 				</div>
 			</div>
 		</section>

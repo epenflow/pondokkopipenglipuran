@@ -63,7 +63,7 @@ const HeroSections = () => {
 	return (
 		<section
 			ref={sectionRef}
-			className='h-screen w-screen flex flex-col items-center justify-center bg-black text-default-200 relative gap-2'>
+			className='h-screen w-screen flex flex-col items-center justify-center bg-default-200 text-black relative gap-2'>
 			<p className='lg:text-4xl text-justify w-4/5 font-[500]'>
 				{CONSTANT_TEXT.pone}
 			</p>
@@ -79,7 +79,7 @@ const HeroSections = () => {
 					ref={imgRef}
 					{...CONSTANT_TEXT.images}
 					objectFit='contain'
-					className='p-2 grayscale border-[1px] border-solid border-default-200'
+					className='p-2 grayscale'
 					width={420}
 					height={420}
 				/>
