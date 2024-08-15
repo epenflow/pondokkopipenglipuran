@@ -28,13 +28,15 @@ export const HeroFooter = React.forwardRef<HTMLDivElement, HeroFooterProps>(
 					width={0}
 					height={0}
 					sizes="100vh"
-					className="lg:w-1/2 w-full px-2 lg:px-0 h-auto object-cover object-center"
+					className="lg:w-1/2 w-full px-2 lg:px-0 h-auto object-cover object-center rounded-xl"
 				/>
 				<div className="lg:w-1/2 w-full px-2 lg:px-0 space-y-1">
 					<h1 className="text-center font-bold">{_Text.heading}</h1>
 					<p className="text-justify">{_Text.main}</p>
 				</div>
-				<PopupText>{_Text.footer}</PopupText>
+				<PopupText className="text-xs text-center lg:text-lg">
+					{_Text.footer}
+				</PopupText>
 			</div>
 		);
 	},

@@ -23,9 +23,6 @@ export const VideoProfile = () => {
 		});
 		gsap.to(videoRef.current, {
 			scale: 1,
-			onStart: () => {
-				console.log('start');
-			},
 			scrollTrigger: {
 				pin: containerRef.current,
 				start: 'top top',
@@ -38,15 +35,21 @@ export const VideoProfile = () => {
 		<section
 			ref={containerRef}
 			className="h-screen w-full relative bg-lush-white">
-			<div className="absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 space-y-2 px-2 lg:px-0 pt-10 lg:pt-0">
-				<MappingWrapper
+			<div className="absolute--center w-full lg:w-1/2 px-2 lg:px-0">
+				{/* <MappingWrapper
 					array={_Text.main}
 					render={(text, index) => (
 						<p key={index} className="text-justify indent-5">
 							{text}
 						</p>
 					)}
-				/>
+				/> */}
+				<p className="text-center indent-5">
+					Nestled in the heart of the serene Penglipuran Village,
+					Pondok Kopi offers more than just a cup of coffee – it
+					provides an immersive experience into the rich cultural
+					heritage of Bali.
+				</p>
 			</div>
 			<iframe
 				ref={videoRef}

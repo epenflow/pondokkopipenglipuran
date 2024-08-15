@@ -1,6 +1,6 @@
 'use client';
-import { Navbar } from '@/components/navbar';
-import { NavbarMenu } from '@/components/navbar-menu';
+import { Navbar } from '@/components/navbar/navbar';
+import { NavbarMenu } from '@/components/navbar/navbar-menu';
 import React from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';

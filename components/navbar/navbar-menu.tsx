@@ -20,6 +20,10 @@ const Navigation: Array<Navigation> = [
 		label: 'Gallery',
 	},
 	{
+		href: '#coffee-story',
+		label: 'coffee story',
+	},
+	{
 		href: '#location',
 		label: 'location',
 	},

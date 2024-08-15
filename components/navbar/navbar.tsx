@@ -1,4 +1,4 @@
-import Time from '@/components/time';
+import Time from '@/components/navbar/time';
 import { Cross as Hamburger } from 'hamburger-react';
 
 import React from 'react';

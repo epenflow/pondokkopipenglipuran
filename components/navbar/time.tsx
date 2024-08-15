@@ -27,7 +27,7 @@ const Time = () => {
 			clearInterval(time);
 		};
 	});
-	return <div>{formatDate(date)}</div>;
+	return <div className="hidden lg:block md:block">{formatDate(date)}</div>;
 };
 export default dynamic(() => Promise.resolve(Time), {
 	ssr: false,

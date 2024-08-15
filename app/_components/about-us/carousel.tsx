@@ -42,7 +42,7 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
 					align: 'start',
 					loop: true,
 				}}
-				className={cn(className)}>
+				className={cn('mx-2 lg:mx-5', className)}>
 				<CarouselContent>
 					<MappingWrapper
 						array={images}
@@ -56,7 +56,7 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
 									width={0}
 									height={0}
 									sizes="100vh"
-									className="w-full h-full object-contain"
+									className="w-full h-full object-contain  rounded-xl"
 								/>
 							</CarouselItem>
 						)}
