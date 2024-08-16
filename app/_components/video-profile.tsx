@@ -1,11 +1,11 @@
-'use client';
-import React from 'react';
-import dynamic from 'next/dynamic';
+"use client";
+import React from "react";
+import dynamic from "next/dynamic";
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import { MappingWrapper } from '@/lib/mapping-wrapper';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { MappingWrapper } from "@/lib/mapping-wrapper";
 gsap.registerPlugin(ScrollTrigger);
 const _Text = {
 	main: [
@@ -25,8 +25,8 @@ export const VideoProfile = () => {
 			scale: 1,
 			scrollTrigger: {
 				pin: containerRef.current,
-				start: 'top top',
-				end: 'bottom',
+				start: "top top",
+				end: "bottom",
 				scrub: 1,
 			},
 		});
@@ -34,8 +34,8 @@ export const VideoProfile = () => {
 	return (
 		<section
 			ref={containerRef}
-			className="h-screen w-full relative bg-lush-white">
-			<div className="absolute--center w-full lg:w-1/2 px-2 lg:px-0">
+			className="relative h-screen w-full border-b bg-lush-white">
+			<div className="absolute--center w-4/5 px-2 lg:w-1/2 lg:px-0">
 				{/* <MappingWrapper
 					array={_Text.main}
 					render={(text, index) => (
@@ -44,16 +44,15 @@ export const VideoProfile = () => {
 						</p>
 					)}
 				/> */}
-				<p className="text-center indent-5">
-					Nestled in the heart of the serene Penglipuran Village,
-					Pondok Kopi offers more than just a cup of coffee – it
-					provides an immersive experience into the rich cultural
-					heritage of Bali.
+				<p className="text-justify text-xl lg:text-center lg:text-3xl">
+					Nestled in the heart of the serene Penglipuran Village, Pondok Kopi
+					offers more than just a cup of coffee – it provides an immersive
+					experience into the rich cultural heritage of Bali.
 				</p>
 			</div>
 			<iframe
 				ref={videoRef}
-				className="w-full h-full object-cover origin-bottom-left bg-lush-white"
+				className="h-full w-full origin-bottom-left rounded-xl border bg-lush-white object-cover"
 				src="https://www.youtube.com/embed/H9Ledm14Nw0?si=Whlqcg04CbItzT0W"
 				title="YouTube video player"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>

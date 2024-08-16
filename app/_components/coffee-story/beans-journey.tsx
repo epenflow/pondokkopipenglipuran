@@ -1,20 +1,20 @@
-'use client';
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { MappingWrapper } from '@/lib/mapping-wrapper';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import { cn } from "@/lib/utils";
+import { MappingWrapper } from "@/lib/mapping-wrapper";
+import Image from "next/image";
 /**
  * GSAP
  */
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 /**
  * Register GSAP Plugin
  */
 gsap.registerPlugin(ScrollTrigger);
 const _Text = {
-	main: 'A Journey of a Thousand Miles Begins with a Single Cup of Coffee.',
+	main: "A Journey of a Thousand Miles Begins with a Single Cup of Coffee.",
 };
 const beans = Array.from({ length: 10 }).map((_, index) => {
 	return {
@@ -33,8 +33,8 @@ export const BeansJourney = React.forwardRef<HTMLDivElement, BeansJourneyProps>(
 				scale: 1,
 				scrollTrigger: {
 					trigger: grinderRef.current!.parentElement,
-					start: 'top-=25% top',
-					end: 'bottom',
+					start: "top-=25% top",
+					end: "bottom",
 					scrub: 1,
 				},
 			});
@@ -43,8 +43,8 @@ export const BeansJourney = React.forwardRef<HTMLDivElement, BeansJourneyProps>(
 			<div
 				{...rest}
 				ref={ref}
-				className={cn('h-[200vh] w-full relative', className)}>
-				<h1 className="font-bold text-4xl text-justify px-2 py-10 text--mix-difference lg:text-9xl">
+				className={cn("relative flex h-[200vh] w-full", className)}>
+				<h1 className="text--mix-difference mx-auto w-4/5 text-justify text-3xl lg:text-9xl">
 					{_Text.main}
 				</h1>
 				<MappingWrapper
@@ -52,7 +52,7 @@ export const BeansJourney = React.forwardRef<HTMLDivElement, BeansJourneyProps>(
 					render={({ left, top, id }) => (
 						<Image
 							key={id}
-							src={'/coffee-bean.png'}
+							src={"/coffee-bean.png"}
 							alt="coffee bean"
 							width={0}
 							height={0}
@@ -67,7 +67,7 @@ export const BeansJourney = React.forwardRef<HTMLDivElement, BeansJourneyProps>(
 					)}
 				/>
 				<Image
-					src={'/spoon.png'}
+					src={"/spoon.png"}
 					alt="coffee spoon"
 					width={0}
 					height={0}
@@ -76,18 +76,18 @@ export const BeansJourney = React.forwardRef<HTMLDivElement, BeansJourneyProps>(
 				/>
 				<div
 					ref={grinderRef}
-					className="h-screen w-full bg-contain bg-no-repeat bg-center absolute top-1/4 scale-50"
+					className="absolute top-1/4 h-screen w-full scale-50 bg-contain bg-center bg-no-repeat"
 					style={{
 						backgroundImage: `url("/grinder.webp")`,
 					}}></div>
-				<div className="absolute bg-lush-white h-[17.7rem] lg:h-[22rem] w-full bottom-0"></div>
+				<div className="absolute bottom-0 h-[17.7rem] w-full bg-lush-white lg:h-[22rem]"></div>
 				<Image
-					src={'/latte-cup.png'}
+					src={"/latte-cup.png"}
 					alt="latte cup"
 					width={0}
 					height={0}
 					sizes="100vh"
-					className="absolute size-96 lg:size-[30rem] bottom-0 object-contain z-30"
+					className="absolute bottom-0 z-30 size-96 object-contain lg:size-[30rem]"
 				/>
 			</div>
 		);

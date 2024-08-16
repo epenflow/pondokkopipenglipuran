@@ -1,19 +1,19 @@
-'use client';
-import React from 'react';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 /**
  * GSAP
  */
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 /**
  * GSAP Register Plugin
  */
 gsap.registerPlugin(ScrollTrigger);
 const _Text = {
-	main: 'A cup of coffee, rich and bold, A Story, beautifully told.',
+	main: "A cup of coffee, rich and bold, A Story, beautifully told.",
 };
 interface EndJourneyProps extends React.HTMLAttributes<HTMLDivElement> {}
 export const EndJourney = React.forwardRef<HTMLDivElement, EndJourneyProps>(
@@ -24,8 +24,8 @@ export const EndJourney = React.forwardRef<HTMLDivElement, EndJourneyProps>(
 				rotate: 180,
 				scrollTrigger: {
 					trigger: imgRef.current!.parentElement,
-					start: 'top-=20% top',
-					end: 'bottom',
+					start: "top-=20% top",
+					end: "bottom",
 					scrub: 1,
 				},
 			});
@@ -35,17 +35,17 @@ export const EndJourney = React.forwardRef<HTMLDivElement, EndJourneyProps>(
 				{...rest}
 				ref={ref}
 				className={cn(
-					'h-screen w-full bg-lush-white relative overflow-hidden',
+					"relative h-screen w-full overflow-hidden bg-lush-white",
 					className,
 				)}>
-				<h1 className="text-4xl lg:text-9xl text--mix-difference font-bold text-justify lg:px-0 px-2 py-10">
+				<h1 className="text--mix-difference mx-auto w-4/5 text-justify text-3xl lg:text-9xl">
 					{_Text.main}
 				</h1>
 				<div
 					ref={imgRef}
-					className="size-96 lg:size-[30rem] absolute bottom-0 origin-center">
+					className="absolute bottom-0 size-96 origin-center lg:size-[30rem]">
 					<Image
-						src={'/latte-cup-2.png'}
+						src={"/latte-cup-2.png"}
 						alt="latte-cup"
 						width={0}
 						height={0}

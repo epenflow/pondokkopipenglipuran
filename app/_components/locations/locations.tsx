@@ -1,19 +1,19 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 /**
  * Components
  */
-import { Footer } from '@/app/_components/locations/footer';
-import { LocationMap } from '@/app/_components/locations/location-map';
+import { Footer } from "@/app/_components/locations/footer";
+import { LocationMap } from "@/app/_components/locations/location-map";
 
 /**
  *
  * GSAP
  */
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import dynamic from 'next/dynamic';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import dynamic from "next/dynamic";
 gsap.registerPlugin(ScrollTrigger);
 const Locations = () => {
 	const containerRef = React.useRef<HTMLElement | null>(null);
@@ -24,15 +24,15 @@ const Locations = () => {
 		ScrollTrigger.create({
 			trigger: footerRef.current,
 			pin: true,
-			start: 'bottom bottom',
-			end: '+=100%',
+			start: "bottom bottom",
+			end: "+=100%",
 			scrub: 1,
 		});
 	}, [containerRef]);
 	return (
 		<section
 			ref={containerRef}
-			className="w-full bg-secondary-blue"
+			className="w-full bg-foreground/95"
 			id="location">
 			<LocationMap ref={locationMapRef} />
 			<Footer ref={footerRef} />

@@ -1,43 +1,23 @@
-'use client';
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { PopupText } from '@/components/popup-text';
-import Image from 'next/image';
+import React from "react";
+/** Utils */
+import { cn } from "@/lib/utils";
 
-const _Text = {
-	heading: '(Pondok Kopi Penglipuran)',
-	main: 'Pondok Kopi Penglipuran is a cozy coffee shop located in the heart of Desa Penglipuran, Bali. Our coffee shop is the perfect place to relax and unwind while enjoying a cup of freshly brewed coffee.',
-	footer: 'we make fresh, delicious food in house everyday',
-};
-interface HeroFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
-export const HeroFooter = React.forwardRef<HTMLDivElement, HeroFooterProps>(
-	({ className, ...rest }, ref) => {
-		return (
+export const HeroFooter = React.forwardRef<
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...rest }, ref) => {
+	return (
+		<div
+			{...rest}
+			ref={ref}
+			className={cn("content--sticky border-t bg-lush-white", className)}>
 			<div
-				{...rest}
-				ref={ref}
-				className={cn(
-					'content--sticky bg-lush-white border flex items-center justify-center flex-col gap-1 overflow-hidden',
-					className,
-				)}>
-				<Image
-					src={
-						'https://ucarecdn.com/31228eb2-3ada-4e92-a387-9325d82551ed/IMG-14.JPG'
-					}
-					alt="pondok coffee"
-					width={0}
-					height={0}
-					sizes="100vh"
-					className="lg:w-1/2 w-full px-2 lg:px-0 h-auto object-cover object-center rounded-xl"
-				/>
-				<div className="lg:w-1/2 w-full px-2 lg:px-0 space-y-1">
-					<h1 className="text-center font-bold">{_Text.heading}</h1>
-					<p className="text-justify">{_Text.main}</p>
-				</div>
-				<PopupText className="text-xs text-center lg:text-lg">
-					{_Text.footer}
-				</PopupText>
-			</div>
-		);
-	},
-);
+				className="h-full w-full origin-bottom bg-cover bg-center grayscale"
+				style={{
+					backgroundImage: `url('https://ucarecdn.com/b7335594-1bb7-49ac-9b6a-91e859a9073c/IMG-20.JPG')`,
+					clipPath: "polygon(50% 0%, 100% 100%, 100% 100%, 0% 100%, 0% 100%)",
+					scale: 0.5,
+				}}></div>
+		</div>
+	);
+});
