@@ -46,7 +46,6 @@ export const Hero = () => {
 					start: "top top",
 					end: "bottom+=100vh top",
 					scrub: true,
-					markers: true,
 				},
 			});
 			heroFooterTimeline

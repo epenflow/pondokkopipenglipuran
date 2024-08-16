@@ -44,7 +44,6 @@ export const Gallery = () => {
 					trigger: containerRef.current,
 					start: "top bottom",
 					end: "top+=20% center",
-					markers: true,
 					scrub: 1,
 				},
 			});
