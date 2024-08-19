@@ -14,13 +14,13 @@ export const LocationMap = React.forwardRef<HTMLDivElement, LocationMapProps>(
 				{...rest}
 				ref={ref}
 				className={cn("relative z-20 border-t bg-lush-white py-20", className)}>
-				<div className="mx-auto w-4/5 items-center space-y-2.5 rounded-t-xl border bg-foreground/95 px-5 py-2 text-lush-white lg:flex">
+				<div className="mx-auto w-[90%] items-center space-y-2.5 rounded-t-xl border-x border-t px-5 py-2 lg:flex lg:w-4/5 lg:bg-foreground/95 lg:text-lush-white">
 					<h1 className="text-center text-3xl lg:basis-1/2 lg:text-7xl">
 						{_Text.heading}
 					</h1>
 					<p className="text-justify text-2xl lg:basis-1/2">{_Text.main}</p>
 				</div>
-				<div className="mx-auto h-screen w-4/5 overflow-hidden rounded-b-xl border">
+				<div className="mx-auto h-screen w-[90%] overflow-hidden rounded-b-xl border-x border-b lg:w-4/5">
 					<iframe
 						title="location"
 						src="https://maps.google.com/maps?q=pondok+kopi+penglipuran&t=&z=18&ie=UTF8&iwloc=&output=embed"
