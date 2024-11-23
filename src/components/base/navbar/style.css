@@ -1,0 +1,88 @@
+:root {
+	--button-height: 40px;
+	--button-width: 100px;
+	--button-radius: 0.5rem;
+	--button-primary-color: 83 97% 72%;
+	--button-secondary-color: 240 10% 3.9%;
+	--perspective-transition: 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+	--rotate-angle: 90deg;
+}
+
+.magnetic {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: fit-content;
+	z-index: 2;
+}
+.magnetic:hover:after {
+	content: "";
+	display: block;
+	height: 10px;
+	width: 10px;
+	border-radius: 100%;
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	transform: translate(-50%, 0%);
+	margin-top: 0.25rem;
+	background-color: hsl(var(--dynamic-magnet-color));
+}
+
+.button {
+	height: var(--button-height);
+	width: var(--button-width);
+	overflow: hidden;
+	border-radius: var(--button-radius);
+}
+
+.perspective-container {
+	width: 100%;
+	height: 100%;
+	background-color: hsl(var(--button-primary-color));
+	color: hsl(var(--button-secondary-color));
+}
+.perspective-container p {
+	margin: 0px;
+}
+.perspective-container:nth-of-type(1):hover {
+	background-color: hsl(var(--button-primary-color) / 0.8);
+}
+.perspective-container:nth-of-type(2):hover {
+	background-color: hsl(var(--button-secondary-color) / 0.8);
+}
+.perspective-container:nth-of-type(2) {
+	background-color: hsl(var(--button-secondary-color));
+	color: hsl(var(--button-primary-color));
+}
+.perspective-container:hover .perspective-text {
+	transform: rotateX(var(--rotate-angle));
+}
+.perspective-container:hover .perspective-text p:nth-of-type(1) {
+	transform: translateY(-100%);
+	opacity: 0;
+}
+.perspective-container:hover .perspective-text p:nth-of-type(2) {
+	opacity: 1;
+}
+.perspective-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	transform-style: preserve-3d;
+	transition: transform var(--perspective-transition);
+}
+.perspective-text p {
+	transition: all var(--perspective-transition);
+	pointer-events: none;
+}
+.perspective-text p:nth-of-type(2) {
+	position: absolute;
+	transform-origin: bottom center;
+	transform: rotateX(calc(-1 * var(--rotate-angle))) translateY(12px);
+	opacity: 0;
+}

@@ -1,0 +1,64 @@
+"use client";
+import React from "react";
+import { cn } from "@/utils";
+import Link from "next/link";
+import { PREFIX_ROUTE } from "@/constants";
+import { HeroHOC, HeroViewProps } from "@/hoc";
+import { CurveCursor, List } from "@/components/base";
+
+const HERO_DESCRIPTIONS_TEXT_CONTENT: Array<string> = [
+	"UNTOLD STORY",
+	"BEGINS WITH",
+	"A SINGLE CUP",
+	"OF COFFEE",
+];
+export const BaseHeroView: React.FC<HeroViewProps> = ({
+	className,
+	containerRef,
+	...rest
+}) => {
+	return (
+		<article
+			{...{
+				...rest,
+				ref: containerRef,
+			}}
+			className={cn(
+				"relative box-border h-svh w-full overflow-hidden bg-foreground py-5 text-primary-foreground",
+				className,
+			)}>
+			<CurveCursor />
+			<section className="container relative z-20 box-border grid h-full grid-cols-1 mix-blend-difference md:grid-cols-2">
+				<div className="flex h-full flex-col justify-center space-y-2">
+					<h2 className="heading-text cursor-hover-item">
+						THE STORY
+					</h2>
+					<List lists={HERO_DESCRIPTIONS_TEXT_CONTENT}>
+						{(text, key) => (
+							<div
+								key={key}
+								className="h-fit w-fit overflow-hidden text-5xl md:text-7xl">
+								<span className="story-text cursor-hover-item inline-block">
+									{text}
+								</span>
+							</div>
+						)}
+					</List>
+				</div>
+				<div className="image-item bg-white"></div>
+				<div className="image-item col-span-1 bg-white"></div>
+				<div className="col-span-1 flex items-center justify-end">
+					<div className="www-text-container">
+						<Link
+							href={PREFIX_ROUTE.WHO_WE_ARE}
+							className="cursor-hover-item text-4xl uppercase">
+							Who We Are
+						</Link>
+						<span className="www-line block h-[5px] w-full bg-background"></span>
+					</div>
+				</div>
+			</section>
+		</article>
+	);
+};
+export const HeroView = HeroHOC(BaseHeroView);
