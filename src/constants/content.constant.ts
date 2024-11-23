@@ -1,5 +1,16 @@
 import { LIST_NAVIGATION, PREFIX_ROUTE } from "@/constants/route.constant";
 
+export const HERO_CONTENT = {
+	TITLE: "THE STORY",
+	DESCRIPTIONS_TEXT_LIST: [
+		"UNTOLD STORY",
+		"BEGINS WITH",
+		"A SINGLE CUP",
+		"OF COFFEE",
+	],
+	LINK_LABEL: "Who We Are",
+};
+
 export const WHO_WE_ARE_CONTENT: {
 	TITLE: string;
 	LISTS: Array<string>;

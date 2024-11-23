@@ -2,16 +2,10 @@
 import React from "react";
 import { cn } from "@/utils";
 import Link from "next/link";
-import { PREFIX_ROUTE } from "@/constants";
+import { HERO_CONTENT, PREFIX_ROUTE } from "@/constants";
 import { HeroHOC, HeroViewProps } from "@/hoc";
 import { CurveCursor, List } from "@/components/base";
 
-const HERO_DESCRIPTIONS_TEXT_CONTENT: Array<string> = [
-	"UNTOLD STORY",
-	"BEGINS WITH",
-	"A SINGLE CUP",
-	"OF COFFEE",
-];
 export const BaseHeroView: React.FC<HeroViewProps> = ({
 	className,
 	containerRef,
@@ -36,9 +30,9 @@ export const BaseHeroView: React.FC<HeroViewProps> = ({
 			<section className="container relative z-20 box-border grid h-full grid-cols-1 mix-blend-difference md:grid-cols-2">
 				<div className="flex h-full flex-col justify-center space-y-2">
 					<h2 className="heading-text cursor-hover-item">
-						THE STORY
+						{HERO_CONTENT.TITLE}
 					</h2>
-					<List lists={HERO_DESCRIPTIONS_TEXT_CONTENT}>
+					<List lists={HERO_CONTENT.DESCRIPTIONS_TEXT_LIST}>
 						{(text, key) => (
 							<div
 								key={key}
@@ -57,7 +51,7 @@ export const BaseHeroView: React.FC<HeroViewProps> = ({
 						<Link
 							href={PREFIX_ROUTE.WHO_WE_ARE}
 							className="cursor-hover-item text-4xl uppercase">
-							Who We Are
+							{HERO_CONTENT.LINK_LABEL}
 						</Link>
 						<span className="www-line block h-[var(--line-height)] w-full bg-background"></span>
 					</div>
