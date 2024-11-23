@@ -80,25 +80,26 @@ export function HeroHOC<T extends object>(
 		 */
 		useGSAP(
 			() => {
+				const imageItem: Array<HTMLElement> =
+					gsap.utils.toArray(".image-item");
 				const timeline = gsap.timeline({
 					scrollTrigger: {
 						trigger: containerRef.current,
+						pin: true,
 						start: "top top",
 						end: "bottom",
 						markers: true,
 						scrub: true,
 						invalidateOnRefresh: true,
+						immediateRender: true,
 					},
 				});
-
-				timeline.to(".image-item", {
-					clipPath: "inset(100% 0% 0% 0%)",
-					ease: "power4.out",
-					immediateRender: true,
-					stagger: {
-						amount: 0.5,
-						each: 0.5,
-					},
+				imageItem.forEach((image) => {
+					timeline.to(image, {
+						clipPath: "inset(100% 0% 0% 0%)",
+						rotateY: 90,
+						ease: "power1.out",
+					});
 				});
 			},
 			{ scope: containerRef },

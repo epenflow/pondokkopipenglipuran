@@ -17,11 +17,16 @@ export const BaseHeroView: React.FC<HeroViewProps> = ({
 	containerRef,
 	...rest
 }) => {
+	const CSSVariables = {
+		"--line-height": "5px",
+	} as React.CSSProperties;
+
 	return (
 		<article
 			{...{
 				...rest,
 				ref: containerRef,
+				style: CSSVariables,
 			}}
 			className={cn(
 				"relative box-border h-svh w-full overflow-hidden bg-foreground py-5 text-primary-foreground",
@@ -54,7 +59,7 @@ export const BaseHeroView: React.FC<HeroViewProps> = ({
 							className="cursor-hover-item text-4xl uppercase">
 							Who We Are
 						</Link>
-						<span className="www-line block h-[5px] w-full bg-background"></span>
+						<span className="www-line block h-[var(--line-height)] w-full bg-background"></span>
 					</div>
 				</div>
 			</section>
