@@ -81,7 +81,7 @@ export const VIDEO_CONTENT: {
 	HREF: string;
 } = {
 	TEXT: "Nestled in the heart of the serene Penglipuran Village, Pondok Kopi offers more than just a cup of coffee – it provides an immersive experience into the rich cultural heritage of Bali.",
-	HREF: "url",
+	HREF: "https://www.youtube.com/embed/H9Ledm14Nw0?si=Whlqcg04CbItzT0W",
 };
 export const NAVBAR_CONTENT: {
 	LABEL: string;

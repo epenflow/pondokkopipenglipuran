@@ -1,26 +1,32 @@
+"use client";
+import VideoHOC, { VideoViewProps } from "@/hoc/video.hoc";
 import { VIDEO_CONTENT } from "@/libs/constant";
-import { cn } from "@/libs/utils";
 import React from "react";
-import type heroView from "./hero.view";
 
-const VideoView: React.FC<React.ComponentProps<"article">> = ({
-	ref,
-	className,
-	...rest
+const VideoView: React.FC<VideoViewProps> = ({
+	containerRef,
+	videoRef,
+	textContainer,
 }) => {
 	return (
 		<article
-			{...rest}
-			ref={ref}
-			className={cn(
-				"container h-svh",
-				"flex flex-col justify-center",
-				className,
-			)}>
-			<p>VideoView</p>
-			<p>{VIDEO_CONTENT.TEXT}</p>
+			ref={containerRef}
+			className="relative h-svh w-full overflow-clip">
+			<div
+				ref={textContainer}
+				className="container absolute flex h-full w-full items-center justify-center">
+				<p className="text-center text-2xl">{VIDEO_CONTENT.TEXT}</p>
+			</div>
+			<iframe
+				ref={videoRef}
+				className="bg-lush-white h-full w-full origin-bottom-left rounded-xl border object-cover"
+				src={VIDEO_CONTENT.HREF}
+				title="YouTube video player"
+				allowFullScreen
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			/>
 		</article>
 	);
 };
 VideoView.displayName = "VideoView";
-export default heroView;
+export default VideoHOC(VideoView);
