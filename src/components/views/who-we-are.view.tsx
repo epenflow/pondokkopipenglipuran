@@ -1,6 +1,6 @@
 import { List } from "@/components/base";
-import { WHO_WE_ARE_CONTENT } from "@/constants";
-import { cn } from "@/utils";
+import { WHO_WE_ARE_CONTENT } from "@/libs/constant";
+import { cn } from "@/libs/utils";
 import React from "react";
 
 const WhoWeAreView: React.FC<React.ComponentProps<"article">> = ({

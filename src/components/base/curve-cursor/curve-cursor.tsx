@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
-import { cn } from "@/utils";
 import {
 	BaseCursorCurveProps,
 	CurveCursorHOC,
 } from "@/components/base/curve-cursor/curve-cursor.hoc";
+import { cn } from "@/libs/utils";
+import React from "react";
 
 export const BaseCurveCursor: React.FC<BaseCursorCurveProps> = ({
 	ref,

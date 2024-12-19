@@ -1,4 +1,58 @@
-import { LIST_NAVIGATION, PREFIX_ROUTE } from "@/constants/route.constant";
+export const PREFIX_ROUTE_ID = {
+	MAIN: "hero",
+	WHO_WE_ARE: "who-we-are",
+	GALLERY: "gallery",
+	VIDEO: "video",
+	COFFEE_STORY: "coffee-story",
+	LOCATION: "location",
+};
+export const PREFIX_ROUTE = {
+	MAIN: `#${PREFIX_ROUTE_ID.MAIN}`,
+	WHO_WE_ARE: `#${PREFIX_ROUTE_ID.WHO_WE_ARE}`,
+	GALLERY: `#${PREFIX_ROUTE_ID.GALLERY}`,
+	VIDEO: `#${PREFIX_ROUTE_ID.VIDEO}`,
+	COFFEE_STORY: `#${PREFIX_ROUTE_ID.COFFEE_STORY}`,
+	LOCATION: `#${PREFIX_ROUTE_ID.LOCATION}`,
+	FACEBOOK:
+		"https://web.facebook.com/p/Pondok-Kopi-Penglipuran-100033954373349/?_rdc=1&_rdr&checkpoint_src=any",
+	INSTAGRAM: "https://www.instagram.com/pondokkopipenglipuran/",
+} satisfies Record<string, string>;
+
+export const LIST_NAVIGATION: Array<{
+	LABEL: string;
+	HREF: string;
+}> = [
+	{
+		LABEL: "Main",
+		HREF: PREFIX_ROUTE.MAIN,
+	},
+	{
+		LABEL: "Who We Are",
+		HREF: PREFIX_ROUTE.WHO_WE_ARE,
+	},
+	{
+		LABEL: "Gallery",
+		HREF: PREFIX_ROUTE.GALLERY,
+	},
+	{
+		LABEL: "Coffee Story",
+		HREF: PREFIX_ROUTE.COFFEE_STORY,
+	},
+	{
+		LABEL: "Location",
+		HREF: PREFIX_ROUTE.LOCATION,
+	},
+];
+
+export const TIME_FH_MM_SS_12H = "hh:mm:s aa"; /// 01:00:00 AM
+export const TIME_SH_MM_SS_12H = "h:mm:ss aa"; /// 1:00:00 AM
+export const TIME_FS = "ss";
+export const TIME_SS = "s";
+
+const TIME_UNITS = 60;
+export const ONE_SECOND_IN_MS = 1_000;
+export const ONE_MINUTE_IN_MS = ONE_SECOND_IN_MS * TIME_UNITS;
+export const ONE_HOUR_IN_MS = ONE_MINUTE_IN_MS * TIME_UNITS;
 
 export const HERO_CONTENT = {
 	TITLE: "THE STORY",

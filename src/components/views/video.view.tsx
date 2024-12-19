@@ -1,5 +1,5 @@
 import { VIDEO_CONTENT } from "@/constants";
-import { cn } from "@/utils";
+import { cn } from "@/libs/utils";
 import React from "react";
 import type heroView from "./hero.view";
 

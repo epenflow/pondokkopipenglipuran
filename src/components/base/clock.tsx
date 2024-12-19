@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
-import { ONE_SECOND_IN_MS } from "@/constants";
-import { cn } from "@/utils";
 import { List } from "@/components/base/list";
+import { ONE_SECOND_IN_MS } from "@/constants";
+import { cn } from "@/libs/utils";
+import React from "react";
 
 interface ClockProps {
 	clockSize?: string;

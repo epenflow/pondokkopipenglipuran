@@ -1,13 +1,14 @@
 "use client";
 import { List } from "@/components/base/list";
 import { useNavbarContext } from "@/components/base/navbar/navbar.provider";
+
+import { useTime } from "@/hooks";
 import {
 	NAVBAR_CONTENT,
 	ONE_SECOND_IN_MS,
 	TIME_FH_MM_SS_12H,
-} from "@/constants";
-import { useTime } from "@/hooks";
-import { cn } from "@/utils";
+} from "@/libs/constant";
+import { cn } from "@/libs/utils";
 import React from "react";
 
 const PerspectiveText: React.FC<{ label: string }> = ({ label }) => {
