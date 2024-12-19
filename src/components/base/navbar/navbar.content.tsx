@@ -2,12 +2,12 @@
 import { List } from "@/components/base/list";
 import { useNavbarContext } from "@/components/base/navbar/navbar.provider";
 
-import { useTime } from "@/hooks";
 import {
 	NAVBAR_CONTENT,
 	ONE_SECOND_IN_MS,
 	TIME_FH_MM_SS_12H,
 } from "@/libs/constant";
+import { useTime } from "@/libs/hooks";
 import { cn } from "@/libs/utils";
 import React from "react";
 

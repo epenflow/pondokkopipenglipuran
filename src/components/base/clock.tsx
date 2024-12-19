@@ -1,6 +1,6 @@
 "use client";
 import { List } from "@/components/base/list";
-import { ONE_SECOND_IN_MS } from "@/constants";
+import { ONE_SECOND_IN_MS } from "@/libs/constant";
 import { cn } from "@/libs/utils";
 import React from "react";
 
