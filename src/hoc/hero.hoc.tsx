@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { TextPlugin } from "gsap/TextPlugin";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+import React from "react";
 
 gsap.registerPlugin(useGSAP, TextPlugin, ScrollTrigger);
 
@@ -51,59 +51,62 @@ export function HeroHOC<T extends object>(
 								: "inset(0% 0% 100% 0%)",
 					});
 				});
-				timeline.to(
-					storyText,
-					{
-						xPercent: 0,
-						yPercent: 0,
-						ease: "power3.out",
-						stagger: {
-							each: 1.5,
-							amount: 1,
+				timeline
+					.to(
+						storyText,
+						{
+							xPercent: 0,
+							yPercent: 0,
+							ease: "power3.out",
+							stagger: {
+								each: 1.5,
+								amount: 1,
+							},
 						},
-						onStart: () => {
-							gsap.to(imageItem, {
-								clipPath: "inset(0% 0% 0% 0%)",
-								ease: "power4.in",
-								duration: 0.5,
-							});
+						"<=1",
+					)
+					.to(
+						imageItem,
+						{
+							clipPath: "inset(0% 0% 0% 0%)",
+							ease: "power4.in",
+							duration: 0.5,
 						},
-					},
-					"<=1",
-				);
+						"<=1",
+					);
 			},
 			{ scope: containerRef },
 		);
 
-		/**
-		 * Scroll animations
-		 */
-		useGSAP(
-			() => {
-				const imageItem: Array<HTMLElement> =
-					gsap.utils.toArray(".image-item");
-				const timeline = gsap.timeline({
-					scrollTrigger: {
-						trigger: containerRef.current,
-						pin: true,
-						start: "top top",
-						end: "bottom",
-						markers: true,
-						scrub: true,
-						invalidateOnRefresh: true,
-						immediateRender: true,
-					},
-				});
-				imageItem.forEach((image) => {
-					timeline.to(image, {
-						clipPath: "inset(100% 0% 0% 0%)",
-						rotateY: 90,
-						ease: "power1.out",
-					});
-				});
-			},
-			{ scope: containerRef },
-		);
+		// /**
+		//  * Scroll animations
+		//  */
+		// useGSAP(
+		// 	() => {
+		// 		const imageItem: Array<HTMLElement> =
+		// 			gsap.utils.toArray(".image-item");
+		// 		const timeline = gsap.timeline({
+		// 			scrollTrigger: {
+		// 				trigger: containerRef.current,
+		// 				pin: true,
+		// 				start: "top top",
+		// 				end: "bottom",
+		// 				markers: true,
+		// 				scrub: true,
+		// 				invalidateOnRefresh: true,
+		// 				immediateRender: true,
+		// 			},
+		// 		});
+		// 		imageItem.forEach((image) => {
+		// 			timeline.to(image, {
+		// 				clipPath: "inset(100% 0% 0% 0%)",
+		// 				rotateY: 90,
+		// 				ease: "power1.out",
+		// 			});
+		// 		});
+		// 	},
+		// 	{ scope: containerRef },
+		// );
 
 		/**
 		 * Hover animations
