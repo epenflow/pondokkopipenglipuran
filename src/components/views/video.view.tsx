@@ -1,4 +1,4 @@
-import { VIDEO_CONTENT } from "@/constants";
+import { VIDEO_CONTENT } from "@/libs/constant";
 import { cn } from "@/libs/utils";
 import React from "react";
 import type heroView from "./hero.view";
