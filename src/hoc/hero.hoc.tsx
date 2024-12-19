@@ -9,7 +9,7 @@ gsap.registerPlugin(useGSAP, TextPlugin, ScrollTrigger);
 
 export interface HeroViewProps
 	extends React.ComponentPropsWithoutRef<"article"> {
-	containerRef: React.RefObject<HTMLElement>;
+	containerRef: React.RefObject<HTMLElement | null>;
 }
 
 export function HeroHOC<T extends object>(

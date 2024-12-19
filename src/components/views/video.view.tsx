@@ -1,11 +1,13 @@
 import { VIDEO_CONTENT } from "@/constants";
 import { cn } from "@/utils";
 import React from "react";
+import type heroView from "./hero.view";
 
-export const VideoView = React.forwardRef<
-	HTMLElement,
-	React.ComponentPropsWithoutRef<"article">
->(({ className, ...rest }, ref) => {
+const VideoView: React.FC<React.ComponentProps<"article">> = ({
+	ref,
+	className,
+	...rest
+}) => {
 	return (
 		<article
 			{...rest}
@@ -19,5 +21,6 @@ export const VideoView = React.forwardRef<
 			<p>{VIDEO_CONTENT.TEXT}</p>
 		</article>
 	);
-});
+};
 VideoView.displayName = "VideoView";
+export default heroView;

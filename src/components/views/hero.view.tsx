@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
-import { cn } from "@/utils";
-import Link from "next/link";
+import { CurveCursor, List } from "@/components/base";
 import { HERO_CONTENT, PREFIX_ROUTE } from "@/constants";
 import { HeroHOC, HeroViewProps } from "@/hoc";
-import { CurveCursor, List } from "@/components/base";
+import { cn } from "@/utils";
+import Link from "next/link";
+import React from "react";
 
 export const BaseHeroView: React.FC<HeroViewProps> = ({
 	className,
@@ -60,4 +60,4 @@ export const BaseHeroView: React.FC<HeroViewProps> = ({
 		</article>
 	);
 };
-export const HeroView = HeroHOC(BaseHeroView);
+export default HeroHOC(BaseHeroView);

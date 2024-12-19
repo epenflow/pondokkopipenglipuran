@@ -1,15 +1,16 @@
 "use client";
-import React from "react";
-import Link from "next/link";
+import { List } from "@/components/base/list";
+import { useNavbarContext } from "@/components/base/navbar/navbar.provider";
 import { NAVBAR_CONTENT } from "@/constants";
 import { cn } from "@/utils";
-import { useNavbarContext } from "@/components/base/navbar/navbar.provider";
-import { List } from "@/components/base/list";
+import Link from "next/link";
+import React, { type ComponentProps } from "react";
 
-export const NavbarList = React.forwardRef<
-	HTMLElement,
-	React.ComponentPropsWithoutRef<"section">
->(({ className, ...rest }, ref) => {
+export const NavbarList: React.FC<ComponentProps<"section">> = ({
+	ref,
+	className,
+	...rest
+}) => {
 	const { trigger } = useNavbarContext();
 
 	return (
@@ -59,5 +60,5 @@ export const NavbarList = React.forwardRef<
 			</ul>
 		</section>
 	);
-});
+};
 NavbarList.displayName = "NavbarList";

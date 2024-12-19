@@ -1,13 +1,13 @@
 "use client";
-import React from "react";
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import React from "react";
 
 gsap.registerPlugin(useGSAP);
 
 export interface BaseCursorCurveProps
 	extends React.ComponentPropsWithoutRef<"div"> {
-	ref: React.RefObject<HTMLDivElement>;
+	ref: React.RefObject<HTMLDivElement | null>;
 }
 
 export function CurveCursorHOC<

@@ -1,13 +1,15 @@
 import React from "react";
 
-export const LocationView = React.forwardRef<
-	HTMLElement,
-	React.ComponentPropsWithoutRef<"article">
->(({ className, ...rest }, ref) => {
+const LocationView: React.FC<React.ComponentProps<"article">> = ({
+	ref,
+	className,
+	...rest
+}) => {
 	return (
 		<article {...rest} ref={ref} className={className}>
 			<p>Location</p>
 		</article>
 	);
-});
+};
 LocationView.displayName = "LocationView";
+export default LocationView;

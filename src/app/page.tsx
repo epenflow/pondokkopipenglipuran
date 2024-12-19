@@ -1,12 +1,11 @@
-import React from "react";
-import { MAIN_VIEW_LIST } from "@/components/views";
 import { List } from "@/components/base";
+import VIEW from "@/components/views";
 
 export default function Home() {
 	return (
 		<main className="mt-[56.8px]">
-			<List lists={MAIN_VIEW_LIST}>
-				{(Component, key) => <Component key={key} />}
+			<List lists={Object.entries(VIEW)}>
+				{([key, Component]) => <Component key={key} />}
 			</List>
 		</main>
 	);

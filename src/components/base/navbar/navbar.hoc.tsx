@@ -3,9 +3,9 @@ import {
 	NavbarProvider,
 	useNavbarContext,
 } from "@/components/base/navbar/navbar.provider";
-import React from "react";
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import React from "react";
 
 gsap.registerPlugin(useGSAP);
 
@@ -15,14 +15,9 @@ export function NavbarHOC<T extends object>(
 	BaseComponent.displayName = "BaseComponent";
 
 	const Navbar = (props: T) => {
-		const {
-			containerRef,
-			notificationContainerRef,
-			contentContainerRef,
-			listContainerRef,
-			isTrigger,
-		} = useNavbarContext();
-		const timeline = React.useRef<GSAPTimeline | null>();
+		const { containerRef, listContainerRef, isTrigger } =
+			useNavbarContext();
+		const timeline = React.useRef<GSAPTimeline | null>(null);
 
 		useGSAP(
 			() => {

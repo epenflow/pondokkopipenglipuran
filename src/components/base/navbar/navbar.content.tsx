@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import { List } from "@/components/base/list";
+import { useNavbarContext } from "@/components/base/navbar/navbar.provider";
 import {
 	NAVBAR_CONTENT,
 	ONE_SECOND_IN_MS,
@@ -7,8 +8,7 @@ import {
 } from "@/constants";
 import { useTime } from "@/hooks";
 import { cn } from "@/utils";
-import { useNavbarContext } from "@/components/base/navbar/navbar.provider";
-import { List } from "@/components/base/list";
+import React from "react";
 
 const PerspectiveText: React.FC<{ label: string }> = ({ label }) => {
 	return (
@@ -18,10 +18,11 @@ const PerspectiveText: React.FC<{ label: string }> = ({ label }) => {
 	);
 };
 
-export const NavbarContent = React.forwardRef<
-	HTMLElement,
-	React.ComponentPropsWithoutRef<"section">
->(({ className, ...rest }, ref) => {
+export const NavbarContent: React.FC<React.ComponentProps<"section">> = ({
+	ref,
+	className,
+	...rest
+}) => {
 	const { trigger, isTrigger } = useNavbarContext();
 	const time = useTime(ONE_SECOND_IN_MS, TIME_FH_MM_SS_12H);
 
@@ -57,5 +58,5 @@ export const NavbarContent = React.forwardRef<
 			</h1>
 		</section>
 	);
-});
+};
 NavbarContent.displayName = "NavbarContent";

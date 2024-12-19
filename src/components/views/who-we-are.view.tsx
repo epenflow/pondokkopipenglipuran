@@ -1,12 +1,13 @@
-import React from "react";
+import { List } from "@/components/base";
 import { WHO_WE_ARE_CONTENT } from "@/constants";
 import { cn } from "@/utils";
-import { List } from "@/components/base";
+import React from "react";
 
-export const WhoWeAreView = React.forwardRef<
-	HTMLElement,
-	React.ComponentPropsWithoutRef<"article">
->(({ className, ...rest }, ref) => {
+const WhoWeAreView: React.FC<React.ComponentProps<"article">> = ({
+	ref,
+	className,
+	...rest
+}) => {
 	return (
 		<article
 			{...rest}
@@ -26,5 +27,6 @@ export const WhoWeAreView = React.forwardRef<
 			</List>
 		</article>
 	);
-});
+};
 WhoWeAreView.displayName = "WhoWeAreView";
+export default WhoWeAreView;

@@ -4,10 +4,9 @@ import React from "react";
 interface NavbarContext {
 	isTrigger: boolean;
 	trigger: () => void;
-	contentContainerRef: React.RefObject<HTMLElement>;
-	listContainerRef: React.RefObject<HTMLElement>;
-	notificationContainerRef: React.RefObject<HTMLElement>;
-	containerRef: React.RefObject<HTMLElement>;
+	contentContainerRef: React.RefObject<HTMLElement | null>;
+	listContainerRef: React.RefObject<HTMLElement | null>;
+	containerRef: React.RefObject<HTMLElement | null>;
 }
 const CreateNavbarContext = React.createContext<NavbarContext | undefined>(
 	undefined,
@@ -17,7 +16,6 @@ export function NavbarProvider({ children }: { children: React.ReactNode }) {
 	const [isTrigger, setTrigger] = React.useState<boolean>(false);
 	const contentContainerRef = React.useRef<HTMLElement | null>(null);
 	const listContainerRef = React.useRef<HTMLElement | null>(null);
-	const notificationContainerRef = React.useRef<HTMLElement | null>(null);
 	const containerRef = React.useRef<HTMLElement | null>(null);
 
 	function trigger() {
@@ -25,17 +23,16 @@ export function NavbarProvider({ children }: { children: React.ReactNode }) {
 	}
 
 	return (
-		<CreateNavbarContext.Provider
+		<CreateNavbarContext
 			value={{
 				isTrigger,
 				trigger,
 				contentContainerRef,
 				listContainerRef,
-				notificationContainerRef,
 				containerRef,
 			}}>
 			{children}
-		</CreateNavbarContext.Provider>
+		</CreateNavbarContext>
 	);
 }
 
