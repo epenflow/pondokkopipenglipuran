@@ -141,3 +141,7 @@ export const NAVBAR_CONTENT: {
 		},
 	],
 };
+export const METADATA = {
+	LABEL: "Pondok Kopi",
+	DESCRIPTION: `Welcome to the company profile website of the Pondok Kopi, nestled in the heart of Karang Memadu, Penglipuran Village. This is your gateway to discovering the essence of our coffee sanctuary, deeply intertwined with the cultural richness of Bali. Here, you can delve into the captivating story behind our brand, explore our meticulously crafted coffee offerings, and immersive yourself in the traditions and heritage that make our coffee experience unique. This website will guide you through an enchanting journey of flavor tradition, and innovation.`,
+};
