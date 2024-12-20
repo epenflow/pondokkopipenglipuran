@@ -25,20 +25,16 @@ function VideoHOC<T extends object>(
 				).getPropertyValue("--foreground");
 				gsap.set(videoRef.current, {
 					scale: 0.25,
-					autoAlpha: 0.75,
 				});
 				gsap.to(videoRef.current, {
 					scale: 1,
-					autoAlpha: 1,
+					ease: "power4.in",
 					scrollTrigger: {
 						pin: containerRef.current,
 						start: "top top",
 						end: "bottom",
-						scrub: 1,
-						markers: true,
-						onscroll: (event) => console.log(event),
+						toggleActions: "play pause reverse reverse",
 					},
-					ease: "power4.in",
 				});
 			},
 			{ scope: containerRef },
