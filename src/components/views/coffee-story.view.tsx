@@ -19,7 +19,7 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 		<article className="relative">
 			<section
 				ref={storyRef}
-				className="relative z-20 grid h-svh w-full grid-cols-1 overflow-clip border-t border-blue-500 md:grid-cols-2">
+				className="relative z-20 grid h-svh w-full grid-cols-1 overflow-clip md:grid-cols-2">
 				<div className="container relative z-10 flex items-center justify-center">
 					<h1 className="text-center text-4xl lg:text-justify lg:text-7xl">
 						{COFFEE_STORY_CONTENT.CULTURE}
@@ -76,12 +76,12 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 					/>
 				</div>
 			</section>
-			<section className="relative z-20 flex h-svh w-full items-center justify-center border border-yellow-500">
+			<section className="relative z-20 flex h-svh w-full items-center justify-center">
 				<h1 className="container text-center text-4xl lg:text-7xl">
 					{COFFEE_STORY_CONTENT.JOURNEY}
 				</h1>
 			</section>
-			<section className="relative h-svh w-full border-b border-green-500">
+			<section className="relative h-svh w-full">
 				<div className="container relative z-10 flex h-full w-full items-center justify-center">
 					<h1 className="text-center text-4xl lg:text-7xl">
 						{COFFEE_STORY_CONTENT.STORY}

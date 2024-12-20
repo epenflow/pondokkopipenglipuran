@@ -72,7 +72,6 @@ function CoffeeStoryHOC<T extends object>(
 			() => {
 				const timeline = gsap.timeline({
 					scrollTrigger: {
-						markers: true,
 						trigger: storyRef.current,
 						start: "top top",
 						end: "bottom",
