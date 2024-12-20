@@ -1,6 +1,6 @@
 "use client";
 import { CurveCursor, List } from "@/components/base";
-import { HeroHOC, HeroViewProps } from "@/hoc";
+import HeroHOC, { type HeroViewProps } from "@/hoc/hero.hoc";
 import { HERO_CONTENT, PREFIX_ROUTE } from "@/libs/constant";
 import { cn } from "@/libs/utils";
 import Link from "next/link";

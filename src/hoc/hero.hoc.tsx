@@ -153,3 +153,4 @@ export function HeroHOC<T extends object>(
 	};
 	return HeroView;
 }
+export default HeroHOC;
