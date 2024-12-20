@@ -83,6 +83,44 @@ export const VIDEO_CONTENT: {
 	TEXT: "Nestled in the heart of the serene Penglipuran Village, Pondok Kopi offers more than just a cup of coffee – it provides an immersive experience into the rich cultural heritage of Bali.",
 	HREF: "https://www.youtube.com/embed/H9Ledm14Nw0?si=Whlqcg04CbItzT0W",
 };
+type ImageInfo = {
+	HREF: string;
+	ALT: string;
+};
+export const COFFEE_STORY_CONTENT: {
+	COFFEE_BEAN: ImageInfo;
+	COFFEE_CUP: ImageInfo;
+	LATTE_ART: ImageInfo;
+	GRINDER: ImageInfo;
+	SPOON: ImageInfo;
+	CULTURE: string;
+	JOURNEY: string;
+	STORY: string;
+} = {
+	CULTURE: `Shaping the Coffee Culture`,
+	JOURNEY: `A Journey of a Thousand Miles Begins with a Single Cup of Coffee.`,
+	STORY: `A cup of coffee, rich and bold, A Story, beautifully told.`,
+	COFFEE_BEAN: {
+		HREF: `https://ucarecdn.com/6bc9a575-c48c-409d-9351-53947c26c61c/-/preview/600x414/`,
+		ALT: "Coffee Bean",
+	},
+	COFFEE_CUP: {
+		HREF: `https://ucarecdn.com/b01b96fd-572a-46ec-8a66-7723fdb6802d/-/preview/1000x494/`,
+		ALT: "Coffee Cup",
+	},
+	LATTE_ART: {
+		HREF: `https://ucarecdn.com/f0f7d5a5-bede-4db2-86ce-db9ebcc7c383/-/preview/1000x1000/`,
+		ALT: "Latte Cup",
+	},
+	GRINDER: {
+		HREF: `https://ucarecdn.com/8dba19f5-fae2-4b1b-8f73-336aac5a96a9/-/preview/965x1000/`,
+		ALT: `Coffee Grinder`,
+	},
+	SPOON: {
+		HREF: `https://ucarecdn.com/d4d63d57-b9eb-4f89-a861-ffbb9ee43090/-/preview/990x437/`,
+		ALT: `Spoon`,
+	},
+};
 export const NAVBAR_CONTENT: {
 	LABEL: string;
 	MENU: Array<string>;
