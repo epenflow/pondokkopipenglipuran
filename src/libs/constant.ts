@@ -127,7 +127,7 @@ export const NAVBAR_CONTENT: {
 	NAVIGATION: typeof LIST_NAVIGATION;
 	SOCIALS: Array<{ LABEL: string; HREF: string }>;
 } = {
-	LABEL: "TESTING",
+	LABEL: "Pondok Kopi",
 	MENU: ["Menu", "Close"],
 	NAVIGATION: LIST_NAVIGATION,
 	SOCIALS: [
