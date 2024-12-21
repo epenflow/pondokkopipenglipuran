@@ -5,10 +5,10 @@ import Image from "next/image";
 import React from "react";
 
 const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
-	coffeeJourneyRef,
-	spoonRef,
-	grinderRef,
+	cultureRef,
+	journeyRef,
 	storyRef,
+	coffeeJourneyRef,
 }) => {
 	const BEANS = Array.from({ length: 10 }).map((_, index) => ({
 		id: index,
@@ -18,22 +18,21 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 	return (
 		<article className="relative">
 			<section
-				ref={storyRef}
-				className="relative z-20 grid h-svh w-full grid-cols-1 overflow-clip md:grid-cols-2">
-				<div className="container relative z-10 flex items-center justify-center">
+				ref={cultureRef}
+				className="relative grid h-svh w-full grid-cols-1 overflow-clip bg-transparent md:grid-cols-2">
+				<div className="container relative z-10 flex items-center justify-center text-background mix-blend-difference">
 					<h1 className="text-center text-4xl lg:text-justify lg:text-7xl">
 						{COFFEE_STORY_CONTENT.CULTURE}
 					</h1>
 				</div>
-				<div className="relative h-full w-full">
+				<div className="relative z-20 h-full w-full">
 					<Image
-						ref={grinderRef}
 						src={COFFEE_STORY_CONTENT.GRINDER.HREF}
 						alt={COFFEE_STORY_CONTENT.GRINDER.ALT}
 						width={0}
 						height={0}
 						sizes="100svh"
-						className="h-full w-full object-contain"
+						className="h-full w-full object-contain mix-blend-normal"
 					/>
 				</div>
 			</section>
@@ -57,7 +56,7 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 						/>
 					))}
 					<Image
-						ref={spoonRef}
+						id="spoon"
 						src={COFFEE_STORY_CONTENT.SPOON.HREF}
 						alt={COFFEE_STORY_CONTENT.SPOON.ALT}
 						width={0}
@@ -67,6 +66,7 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 					/>
 					<div className="absolute -bottom-20 size-96 bg-background" />
 					<Image
+						id="coffee-cup"
 						src={COFFEE_STORY_CONTENT.COFFEE_CUP.HREF}
 						alt={COFFEE_STORY_CONTENT.COFFEE_CUP.ALT}
 						width={0}
@@ -76,14 +76,18 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 					/>
 				</div>
 			</section>
-			<section className="relative z-20 flex h-svh w-full items-center justify-center">
-				<h1 className="container text-center text-4xl lg:text-7xl">
+			<section
+				ref={journeyRef}
+				className="relative z-20 flex h-svh w-full items-center justify-center text-background mix-blend-difference">
+				<h1 className="container translate-y-full text-center text-4xl opacity-0 lg:text-7xl">
 					{COFFEE_STORY_CONTENT.JOURNEY}
 				</h1>
 			</section>
-			<section className="relative h-svh w-full">
-				<div className="container relative z-10 flex h-full w-full items-center justify-center">
-					<h1 className="text-center text-4xl lg:text-7xl">
+			<section
+				ref={storyRef}
+				className="relative h-svh w-full overflow-clip">
+				<div className="container relative z-10 flex h-full w-full items-center justify-center text-background mix-blend-difference">
+					<h1 className="translate-y-full text-center text-4xl opacity-0 mix-blend-difference lg:text-7xl">
 						{COFFEE_STORY_CONTENT.STORY}
 					</h1>
 				</div>
@@ -93,7 +97,7 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 					width={0}
 					height={0}
 					sizes="100svh"
-					className="absolute bottom-0 size-96 object-contain"
+					className="absolute bottom-0 size-96 rotate-180 object-contain"
 				/>
 			</section>
 		</article>

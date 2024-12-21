@@ -28,7 +28,7 @@ function VideoHOC<T extends object>(
 				});
 				gsap.to(videoRef.current, {
 					scale: 1,
-					ease: "power4.in",
+					ease: "none",
 					scrollTrigger: {
 						pin: containerRef.current,
 						start: "top top",

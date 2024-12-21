@@ -7,8 +7,8 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export interface CoffeeStoryProps {
 	coffeeJourneyRef: React.RefObject<HTMLElement | null>;
-	spoonRef: React.RefObject<HTMLImageElement | null>;
-	grinderRef: React.RefObject<HTMLImageElement | null>;
+	journeyRef: React.RefObject<HTMLElement | null>;
+	cultureRef: React.RefObject<HTMLElement | null>;
 	storyRef: React.RefObject<HTMLElement | null>;
 }
 function CoffeeStoryHOC<T extends object>(
@@ -16,16 +16,16 @@ function CoffeeStoryHOC<T extends object>(
 ) {
 	const CoffeeStory = (props: T) => {
 		const coffeeJourneyRef = React.useRef<HTMLElement | null>(null);
-		const spoonRef = React.useRef<HTMLImageElement | null>(null);
-
+		const journeyRef = React.useRef<HTMLElement | null>(null);
 		const storyRef = React.useRef<HTMLElement | null>(null);
-		const grinderRef = React.useRef<HTMLImageElement | null>(null);
+
+		const cultureRef = React.useRef<HTMLElement | null>(null);
 
 		useGSAP(
 			() => {
-				console.group("ScrollTrigger");
 				const beans: HTMLImageElement[] = gsap.utils.toArray(".bean");
-				console.log(beans);
+				const spoon = coffeeJourneyRef.current!.querySelector("#spoon");
+
 				const timeline = gsap.timeline({
 					scrollTrigger: {
 						trigger: coffeeJourneyRef.current,
@@ -37,7 +37,7 @@ function CoffeeStoryHOC<T extends object>(
 
 				timeline
 					.to(
-						spoonRef.current,
+						spoon,
 						{
 							bottom: 20,
 							rotate: -90,
@@ -55,13 +55,13 @@ function CoffeeStoryHOC<T extends object>(
 						0,
 					)
 					.to(
-						spoonRef.current,
+						spoon,
 						{
 							rotate: -125,
 						},
 						1,
 					)
-					.to(spoonRef.current, {
+					.to(spoon, {
 						rotate: -90,
 					});
 			},
@@ -70,29 +70,88 @@ function CoffeeStoryHOC<T extends object>(
 
 		useGSAP(
 			() => {
+				const image = cultureRef.current!.querySelector("img");
+				const text = cultureRef.current!.querySelector("h1");
+
 				const timeline = gsap.timeline({
 					scrollTrigger: {
-						trigger: storyRef.current,
-						start: "top top",
+						trigger: cultureRef.current,
+						start: "top center",
 						end: "bottom",
 						scrub: 1,
 					},
 				});
-				timeline.to(grinderRef.current, {
-					rotate: 360,
-					duration: 1,
+				timeline
+					.to(image, {
+						rotate: 360,
+						duration: 1,
+					})
+					.to(
+						text,
+						{
+							scaleY: 0.95,
+							rotateX: 45,
+						},
+						0,
+					);
+			},
+			{ scope: cultureRef },
+		);
+
+		useGSAP(
+			() => {
+				const text = journeyRef.current!.querySelector("h1");
+				gsap.to(text, {
+					yPercent: -200,
+					opacity: 100,
+					scrollTrigger: {
+						trigger: journeyRef.current,
+						start: "top center",
+						end: "center",
+						scrub: 1,
+					},
 				});
+			},
+			{ scope: journeyRef },
+		);
+
+		useGSAP(
+			() => {
+				const text = storyRef.current!.querySelector("h1");
+				const image = storyRef.current!.querySelector("img");
+
+				const timeline = gsap.timeline({
+					scrollTrigger: {
+						trigger: storyRef.current,
+						start: "top center",
+						end: "bottom",
+						scrub: 1,
+					},
+				});
+				timeline
+					.to(text, {
+						yPercent: -200,
+						opacity: 100,
+					})
+					.to(
+						image,
+						{
+							rotate: 0,
+						},
+						0,
+					);
 			},
 			{ scope: storyRef },
 		);
+
 		return (
 			<BaseComponent
 				{...{
 					...props,
-					coffeeJourneyRef,
-					spoonRef,
-					grinderRef,
 					storyRef,
+					journeyRef,
+					coffeeJourneyRef,
+					cultureRef,
 				}}
 			/>
 		);

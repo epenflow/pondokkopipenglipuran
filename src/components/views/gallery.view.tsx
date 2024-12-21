@@ -1,14 +1,15 @@
 import React from "react";
 
-export const GalleryView: React.FC<React.ComponentProps<"article">> = ({
+const GalleryView: React.FC<React.ComponentProps<"article">> = ({
 	className,
 	ref,
 	...rest
 }) => {
 	return (
-		<article {...rest} ref={ref} className={className}>
-			<p>Gallery</p>
+		<article {...rest} ref={ref} className="h-svh">
+			<p className="text-background mix-blend-difference">Gallery</p>
 		</article>
 	);
 };
 GalleryView.displayName = "GalleryView";
+export default GalleryView;

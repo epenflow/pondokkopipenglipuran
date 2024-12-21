@@ -6,5 +6,6 @@ const MAIN_VIEW_LIST: Record<string, React.ComponentType<object>> = {
 	WhoWeAre: dynamic(() => import("@/components/views/who-we-are.view")),
 	Video: dynamic(() => import("@/components/views/video.view")),
 	CoffeeStory: dynamic(() => import("@/components/views/coffee-story.view")),
+	Gallery: dynamic(() => import("@/components/views/gallery.view")),
 };
 export default MAIN_VIEW_LIST;
