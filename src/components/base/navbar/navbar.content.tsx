@@ -32,7 +32,7 @@ export const NavbarContent: React.FC<React.ComponentProps<"section">> = ({
 			{...rest}
 			ref={ref}
 			className={cn(
-				"container flex items-center justify-between",
+				"container flex items-center justify-between overflow-x-clip",
 				className,
 			)}>
 			<button onClick={trigger} className="button">

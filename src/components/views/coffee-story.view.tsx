@@ -38,7 +38,7 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 			</section>
 			<section
 				ref={coffeeJourneyRef}
-				className="absolute top-0 h-[200svh] w-full">
+				className="absolute top-0 h-[200svh] w-full overflow-x-clip">
 				<div className="relative h-full w-full">
 					{BEANS.map(({ id, left, top }) => (
 						<Image
