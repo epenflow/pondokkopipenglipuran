@@ -7,7 +7,7 @@ const GalleryView: React.FC<React.ComponentProps<"article">> = ({
 	...rest
 }) => {
 	return (
-		<article {...rest} ref={ref} className="h-svh">
+		<article {...rest} ref={ref} className="h-svh w-full">
 			<p className="text-background mix-blend-difference">
 				{GALLERY_CONTENT.LABEL}
 			</p>

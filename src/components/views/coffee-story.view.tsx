@@ -16,7 +16,7 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 		left: Math.max(index * Math.floor(Math.random() * 100)),
 	}));
 	return (
-		<article className="relative">
+		<article className="relative h-auto w-full">
 			<section
 				ref={cultureRef}
 				className="relative grid h-svh w-full grid-cols-1 overflow-clip bg-transparent md:grid-cols-2">
@@ -81,7 +81,7 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 				style={{
 					perspective: "100svh",
 				}}
-				className="relative z-20 flex h-svh w-full items-center justify-center text-background mix-blend-difference">
+				className="relative z-20 flex h-svh w-full items-center justify-center overflow-x-clip text-background mix-blend-difference">
 				<h1
 					style={{
 						transform: "rotateX(45deg)",
@@ -92,7 +92,7 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 			</section>
 			<section
 				ref={storyRef}
-				className="relative h-svh w-full overflow-clip">
+				className="relative h-svh w-full overflow-x-clip">
 				<div
 					style={{
 						perspective: "100svh",

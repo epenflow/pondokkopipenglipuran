@@ -7,8 +7,7 @@ import React from "react";
 
 gsap.registerPlugin(useGSAP, TextPlugin, ScrollTrigger);
 
-export interface HeroViewProps
-	extends React.ComponentPropsWithoutRef<"article"> {
+export interface HeroViewProps {
 	containerRef: React.RefObject<HTMLElement | null>;
 }
 

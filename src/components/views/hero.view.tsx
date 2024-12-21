@@ -7,7 +7,6 @@ import Link from "next/link";
 import React from "react";
 
 export const BaseHeroView: React.FC<HeroViewProps> = ({
-	className,
 	containerRef,
 	...rest
 }) => {
@@ -24,7 +23,6 @@ export const BaseHeroView: React.FC<HeroViewProps> = ({
 			}}
 			className={cn(
 				"relative box-border h-svh w-full overflow-hidden bg-foreground py-5 text-primary-foreground",
-				className,
 			)}>
 			<CurveCursor />
 			<section className="container relative z-20 box-border grid h-full grid-cols-1 mix-blend-difference md:grid-cols-2">
