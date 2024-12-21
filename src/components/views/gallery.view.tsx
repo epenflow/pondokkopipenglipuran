@@ -1,3 +1,4 @@
+import { GALLERY_CONTENT } from "@/libs/constant";
 import React from "react";
 
 const GalleryView: React.FC<React.ComponentProps<"article">> = ({
@@ -7,7 +8,9 @@ const GalleryView: React.FC<React.ComponentProps<"article">> = ({
 }) => {
 	return (
 		<article {...rest} ref={ref} className="h-svh">
-			<p className="text-background mix-blend-difference">Gallery</p>
+			<p className="text-background mix-blend-difference">
+				{GALLERY_CONTENT.LABEL}
+			</p>
 		</article>
 	);
 };

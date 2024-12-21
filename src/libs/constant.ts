@@ -121,6 +121,104 @@ export const COFFEE_STORY_CONTENT: {
 		ALT: `Spoon`,
 	},
 };
+
+export const GALLERY_CONTENT: {
+	LABEL: string;
+	GALLERY: ImageInfo[];
+} = {
+	LABEL: "Gallery",
+	GALLERY: [
+		{
+			HREF: "https://ucarecdn.com/d6b0f548-3eb9-472b-b5e1-8ab0ca403184/-/preview/1000x666/",
+			ALT: "Pemandangan Pondok Kopi Penglipuran dengan arsitektur tradisional Bali dan pepohonan hijau.",
+		},
+		{
+			HREF: "https://ucarecdn.com/918c7167-1cee-46bf-bf01-b1acad0a78af/-/preview/1000x666/",
+			ALT: "Area tempat duduk outdoor yang nyaman di Pondok Kopi, ideal untuk menikmati kopi dan suasana Penglipuran.",
+		},
+		{
+			HREF: "https://ucarecdn.com/b7335594-1bb7-49ac-9b6a-91e859a9073c/-/preview/1000x666/",
+			ALT: "Pondok Kopi Penglipuran, tempat ideal untuk bersantai dan menikmati kopi di tengah desa wisata.",
+		},
+		{
+			HREF: "https://ucarecdn.com/ab3bcc3a-bc76-4df7-ac7a-ea52aa6a7d4f/-/preview/1000x666/",
+			ALT: "Secangkir kopi hangat di meja kayu Pondok Kopi, menciptakan suasana yang hangat dan akrab.",
+		},
+		{
+			HREF: "https://ucarecdn.com/213daea4-c571-4cf5-98a0-54435e40770c/-/preview/1000x666/",
+			ALT: "Interior Pondok Kopi dengan dekorasi tradisional Bali, memberikan pengalaman ngopi yang autentik.",
+		},
+		{
+			HREF: "https://ucarecdn.com/c8685264-7b5d-47e7-af39-3db3d71d15fd/-/preview/1000x666/",
+			ALT: "Suasana santai di Pondok Kopi Penglipuran, cocok untuk melepaskan penat setelah berkeliling desa.",
+		},
+		{
+			HREF: "https://ucarecdn.com/cf87408c-dc75-4151-99db-91c180b83ae8/-/preview/1000x666/",
+			ALT: "Pengunjung menikmati kopi dan alunan musik di Pondok Kopi Penglipuran.",
+		},
+		{
+			HREF: "https://ucarecdn.com/31228eb2-3ada-4e92-a387-9325d82551ed/-/preview/1000x666/",
+			ALT: "Detail meja dan kursi kayu di Pondok Kopi, menciptakan suasana yang nyaman dan natural.",
+		},
+		{
+			HREF: "https://ucarecdn.com/b0ac6fe8-a7a7-475c-8d48-b6c80e6184df/-/preview/1000x666/",
+			ALT: "Secangkir kopi hangat mengepul di Pondok Kopi Penglipuran.",
+		},
+		{
+			HREF: "https://ucarecdn.com/cf07b13d-7f8b-48e9-b1b5-c3f830033311/-/preview/1000x666/",
+			ALT: "Kopi spesial disajikan di Pondok Kopi Penglipuran.",
+		},
+		{
+			HREF: "https://ucarecdn.com/180b8bea-b6f9-4ed1-a44d-8ad5cc97d502/-/preview/1000x666/",
+			ALT: "Barista profesional Pondok Kopi sedang menyiapkan pesanan kopi.",
+		},
+		{
+			HREF: "https://ucarecdn.com/367d507f-f79c-47fc-adb4-4e5c342beb5d/-/preview/1000x666/",
+			ALT: "Barista Pondok Kopi dengan terampil meracik kopi untuk pengunjung.",
+		},
+		{
+			HREF: "https://ucarecdn.com/b645d9df-5b71-42e4-9775-1bf23bc8f38f/-/preview/1000x666/",
+			ALT: "Close-up barista Pondok Kopi sedang menuangkan susu untuk latte art.",
+		},
+		{
+			HREF: "https://ucarecdn.com/376e46df-3d32-4685-9cde-98a823048534/-/preview/1000x666/",
+			ALT: "Suasana hangat dan akrab di Pondok Kopi Penglipuran.",
+		},
+		{
+			HREF: "https://ucarecdn.com/c90d9d45-b333-45fd-9077-cd0c466b51da/-/preview/1000x666/",
+			ALT: "Tempat yang nyaman untuk bersantai dan menikmati pemandangan di Pondok Kopi.",
+		},
+		{
+			HREF: "https://ucarecdn.com/fc8e0447-b7cf-4cd1-876f-c3464f6ba6b4/-/preview/1000x666/",
+			ALT: "Suasana tenang dan damai di Pondok Kopi Penglipuran.",
+		},
+		{
+			HREF: "https://ucarecdn.com/e7b26bd4-1aa4-4ab0-b3ff-dedd854e612f/-/preview/1000x666/",
+			ALT: "Pondok Kopi Penglipuran dengan latar belakang rumah adat Bali yang khas.",
+		},
+		{
+			HREF: "https://ucarecdn.com/43f772ae-033d-45c5-8063-5b763278bd7f/-/preview/1000x666/",
+			ALT: "Pondok Kopi Penglipuran, destinasi kopi yang wajib dikunjungi di Bangli.",
+		},
+		{
+			HREF: "https://ucarecdn.com/2f9ea7c3-0cc1-43e1-b26d-8ea9dfd855c8/-/preview/1000x666/",
+			ALT: "Pondok Kopi Penglipuran, hidden gem di Bali yang menawarkan kopi nikmat dan suasana pedesaan yang asri.",
+		},
+		{
+			HREF: "https://ucarecdn.com/a11d3915-f77a-4445-9b70-a2d218a1c9d2/-/preview/1000x666/",
+			ALT: "Menikmati kopi di Pondok Kopi, hidden gem di Penglipuran, Bangli.",
+		},
+		{
+			HREF: "https://ucarecdn.com/23eebf2e-dbcc-4454-a88f-a08e283c0b96/-/preview/1000x666/",
+			ALT: "Pondok Kopi Penglipuran terletak di Karang Memadu, menawarkan suasana yang tenang dan alami.",
+		},
+		{
+			HREF: "https://ucarecdn.com/865a25f0-234f-477b-beff-1a026afb6904/-/preview/1000x666/",
+			ALT: "Pondok Kopi, hidden gem di Penglipuran, Bangli, Bali dengan suasana pedesaan yang otentik.",
+		},
+	],
+};
+
 export const NAVBAR_CONTENT: {
 	LABEL: string;
 	MENU: Array<string>;
