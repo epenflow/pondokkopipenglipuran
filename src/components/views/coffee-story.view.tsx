@@ -64,7 +64,7 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 						sizes="100svh"
 						className="absolute z-10 size-96 object-contain"
 					/>
-					<div className="absolute -bottom-20 size-96 bg-background" />
+					<div className="absolute -bottom-20 h-72 w-96 bg-background" />
 					<Image
 						id="coffee-cup"
 						src={COFFEE_STORY_CONTENT.COFFEE_CUP.HREF}
@@ -78,16 +78,31 @@ const CoffeeStoryView: React.FC<CoffeeStoryProps> = ({
 			</section>
 			<section
 				ref={journeyRef}
+				style={{
+					perspective: "100svh",
+				}}
 				className="relative z-20 flex h-svh w-full items-center justify-center text-background mix-blend-difference">
-				<h1 className="container translate-y-full text-center text-4xl opacity-0 lg:text-7xl">
+				<h1
+					style={{
+						transform: "rotateX(45deg)",
+					}}
+					className="container translate-y-full text-center text-4xl opacity-0 lg:text-7xl">
 					{COFFEE_STORY_CONTENT.JOURNEY}
 				</h1>
 			</section>
 			<section
 				ref={storyRef}
 				className="relative h-svh w-full overflow-clip">
-				<div className="container relative z-10 flex h-full w-full items-center justify-center text-background mix-blend-difference">
-					<h1 className="translate-y-full text-center text-4xl opacity-0 mix-blend-difference lg:text-7xl">
+				<div
+					style={{
+						perspective: "100svh",
+					}}
+					className="container relative z-10 flex h-full w-full items-center justify-center text-background mix-blend-difference">
+					<h1
+						style={{
+							transform: "rotateX(45deg)",
+						}}
+						className="translate-y-full text-center text-4xl opacity-0 mix-blend-difference lg:text-7xl">
 						{COFFEE_STORY_CONTENT.STORY}
 					</h1>
 				</div>

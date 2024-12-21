@@ -29,9 +29,9 @@ function CoffeeStoryHOC<T extends object>(
 				const timeline = gsap.timeline({
 					scrollTrigger: {
 						trigger: coffeeJourneyRef.current,
-						start: "top top",
+						start: "top+=10% top",
 						end: "bottom-=10%",
-						scrub: 1,
+						scrub: 1.5,
 					},
 				});
 
@@ -41,6 +41,7 @@ function CoffeeStoryHOC<T extends object>(
 						{
 							bottom: 20,
 							rotate: -90,
+							ease: "none",
 						},
 						0,
 					)
@@ -51,6 +52,7 @@ function CoffeeStoryHOC<T extends object>(
 							y: 0,
 							left: 150,
 							bottom: 0,
+							ease: "none",
 						},
 						0,
 					)
@@ -58,11 +60,13 @@ function CoffeeStoryHOC<T extends object>(
 						spoon,
 						{
 							rotate: -125,
+							ease: "none",
 						},
 						1,
 					)
 					.to(spoon, {
 						rotate: -90,
+						ease: "none",
 					});
 			},
 			{ scope: coffeeJourneyRef },
@@ -81,19 +85,10 @@ function CoffeeStoryHOC<T extends object>(
 						scrub: 1,
 					},
 				});
-				timeline
-					.to(image, {
-						rotate: 360,
-						duration: 1,
-					})
-					.to(
-						text,
-						{
-							scaleY: 0.95,
-							rotateX: 45,
-						},
-						0,
-					);
+				timeline.to(image, {
+					rotate: 360,
+					duration: 1,
+				});
 			},
 			{ scope: cultureRef },
 		);
@@ -104,6 +99,7 @@ function CoffeeStoryHOC<T extends object>(
 				gsap.to(text, {
 					yPercent: -200,
 					opacity: 100,
+					rotateX: 0,
 					scrollTrigger: {
 						trigger: journeyRef.current,
 						start: "top center",
@@ -132,6 +128,7 @@ function CoffeeStoryHOC<T extends object>(
 					.to(text, {
 						yPercent: -200,
 						opacity: 100,
+						rotateX: 0,
 					})
 					.to(
 						image,
