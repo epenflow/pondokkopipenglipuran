@@ -8,10 +8,7 @@ const BricolageGrotesque = Bricolage_Grotesque({
 	style: ["normal"],
 	subsets: ["latin"],
 });
-export const metadata: Metadata = {
-	title: METADATA.LABEL,
-	description: METADATA.DESCRIPTION,
-};
+export const metadata: Metadata = METADATA;
 
 export default function RootLayout({
 	children,
