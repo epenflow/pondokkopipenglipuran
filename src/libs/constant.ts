@@ -63,6 +63,10 @@ export const HERO_CONTENT = {
 		"OF COFFEE",
 	],
 	LINK_LABEL: "Who We Are",
+	IMG_ONE: {
+		HREF: `https://ucarecdn.com/d6b0f548-3eb9-472b-b5e1-8ab0ca403184/-/preview/1000x666/`,
+		ALT: `Pemandangan Pondok Kopi Penglipuran dengan arsitektur tradisional Bali dan pepohonan hijau.`,
+	},
 };
 
 export const WHO_WE_ARE_CONTENT: {

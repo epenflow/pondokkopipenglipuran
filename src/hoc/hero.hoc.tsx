@@ -17,16 +17,11 @@ export function HeroHOC<T extends object>(
 	const HeroView = (props: T) => {
 		const containerRef = React.useRef<HTMLElement | null>(null);
 
-		/**
-		 * Reveal animations
-		 */
 		useGSAP(
 			() => {
 				const storyText: Array<HTMLElement> =
 					gsap.utils.toArray(".story-text");
 				const timeline = gsap.timeline();
-				const imageItem: Array<HTMLElement> =
-					gsap.utils.toArray(".image-item");
 
 				timeline.set(".heading-text", {
 					text: "",
@@ -42,74 +37,24 @@ export function HeroHOC<T extends object>(
 						yPercent: index % 2 === 1 ? 200 : -200,
 					});
 				});
-				imageItem.forEach((element, index) => {
-					gsap.set(element, {
-						clipPath:
-							index % 2 === 1
-								? "inset(100% 0% 0% 0%)"
-								: "inset(0% 0% 100% 0%)",
-					});
-				});
-				timeline
-					.to(
-						storyText,
-						{
-							xPercent: 0,
-							yPercent: 0,
-							ease: "power3.out",
-							stagger: {
-								each: 1.5,
-								amount: 1,
-							},
+
+				timeline.to(
+					storyText,
+					{
+						xPercent: 0,
+						yPercent: 0,
+						ease: "power3.out",
+						stagger: {
+							each: 1.5,
+							amount: 1,
 						},
-						"<=1",
-					)
-					.to(
-						imageItem,
-						{
-							clipPath: "inset(0% 0% 0% 0%)",
-							ease: "power4.in",
-							duration: 0.5,
-						},
-						"<=1",
-					);
+					},
+					"<=1",
+				);
 			},
 			{ scope: containerRef },
 		);
 
-		// /**
-		//  * Scroll animations
-		//  */
-		// useGSAP(
-		// 	() => {
-		// 		const imageItem: Array<HTMLElement> =
-		// 			gsap.utils.toArray(".image-item");
-		// 		const timeline = gsap.timeline({
-		// 			scrollTrigger: {
-		// 				trigger: containerRef.current,
-		// 				pin: true,
-		// 				start: "top top",
-		// 				end: "bottom",
-		// 				markers: true,
-		// 				scrub: true,
-		// 				invalidateOnRefresh: true,
-		// 				immediateRender: true,
-		// 			},
-		// 		});
-		// 		imageItem.forEach((image) => {
-		// 			timeline.to(image, {
-		// 				clipPath: "inset(100% 0% 0% 0%)",
-		// 				rotateY: 90,
-		// 				ease: "power1.out",
-		// 			});
-		// 		});
-		// 	},
-		// 	{ scope: containerRef },
-		// );
-
-		/**
-		 * Hover animations
-		 */
 		useGSAP(
 			() => {
 				const FOREGROUND_COLOR = getComputedStyle(

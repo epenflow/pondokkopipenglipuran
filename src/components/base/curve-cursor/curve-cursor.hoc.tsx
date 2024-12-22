@@ -64,13 +64,13 @@ export function CurveCursorHOC<
 
 			function mouseEnter(element: HTMLElement) {
 				gsap.to(element, {
-					color: `hsl(${FOREGROUND_COLOR})`,
+					color: `hsl(${PRIMARY_COLOR})`,
 				});
 				timeline.play();
 			}
 			function mouseLeave(element: HTMLElement) {
 				gsap.to(element, {
-					color: `hsl(${PRIMARY_COLOR})`,
+					color: `hsl(${FOREGROUND_COLOR})`,
 				});
 				timeline.reverse();
 			}
