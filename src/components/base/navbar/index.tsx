@@ -21,4 +21,4 @@ export const BaseNavbar: React.FC = () => {
 	);
 };
 
-export const Navbar = NavbarHOC(BaseNavbar);
+export default NavbarHOC(BaseNavbar);

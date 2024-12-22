@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/base";
+import Navbar from "@/components/base/navbar";
 import { METADATA } from "@/libs/constant";
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
