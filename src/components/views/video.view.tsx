@@ -11,7 +11,7 @@ const VideoView: React.FC<VideoViewProps> = ({
 	return (
 		<article
 			ref={containerRef}
-			className="relative h-svh w-full overflow-clip">
+			className="relative h-svh w-full overflow-clip border-t">
 			<div
 				ref={textContainer}
 				className="container absolute flex h-full w-full items-center justify-center">
