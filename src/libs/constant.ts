@@ -254,12 +254,18 @@ export const METADATA: Metadata = {
 		title: "Pondok Kopi - Experience Balinese Coffee in Penglipuran Village",
 		countryName: "Indonesia",
 		description: `Discover the unique charm of Pondok Kopi, a coffee sanctuary nestled in the heart of Karang Memadu, Penglipuran Village, Bali. Immerse yourself in the rich cultural heritage of Bali while enjoying our meticulously crafted coffee offerings. Explore our story, savor our flavors, and experience the tradition and innovation that make Pondok Kopi truly special.`,
+		url: `https://pondokkopipenglipuran-git-under-epenflows-projects.vercel.app/`,
 		images: [
-			"https://ucarecdn.com/d6b0f548-3eb9-472b-b5e1-8ab0ca403184/-/preview/1000x666/",
+			"https://ucarecdn.com/d6b0f548-3eb9-472b-b5e1-8ab0ca403184/-/preview/1200x630",
 		],
+		videos: {
+			host: "http://www.youtube.com/",
+			url: "https://www.youtube.com/watch?v=H9Ledm14Nw0&t=7s",
+		},
 	},
 	keywords:
 		"coffee shop, penglipuran village, balinese coffee, karang memadu, coffee experience, bali culture, coffee shop bali, traditional coffee",
 	applicationName: "Pondok Kopi Penglipuran",
 	publisher: "Pondok Kopi",
+	robots: "index, follow",
 };
