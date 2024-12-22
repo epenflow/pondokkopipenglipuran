@@ -10,7 +10,7 @@ export interface BaseCursorCurveProps
 	ref: React.RefObject<HTMLDivElement | null>;
 }
 
-export function CurveCursorHOC<
+function CurveCursorHOC<
 	T extends object & React.ComponentPropsWithoutRef<"div">,
 >(BaseComponent: React.ComponentType<T & BaseCursorCurveProps>) {
 	const CurveCursor = (props: T) => {
@@ -92,3 +92,4 @@ export function CurveCursorHOC<
 
 	return CurveCursor;
 }
+export default CurveCursorHOC;

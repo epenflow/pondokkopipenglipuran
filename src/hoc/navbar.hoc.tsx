@@ -9,9 +9,7 @@ import React from "react";
 
 gsap.registerPlugin(useGSAP);
 
-export function NavbarHOC<T extends object>(
-	BaseComponent: React.ComponentType<T>,
-) {
+function NavbarHOC<T extends object>(BaseComponent: React.ComponentType<T>) {
 	BaseComponent.displayName = "BaseComponent";
 
 	const Navbar = (props: T) => {
@@ -175,3 +173,4 @@ export function NavbarHOC<T extends object>(
 		);
 	};
 }
+export default NavbarHOC;

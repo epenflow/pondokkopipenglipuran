@@ -1,8 +1,8 @@
 "use client";
 import { NavbarContent } from "@/components/base/navbar/navbar.content";
-import { NavbarHOC } from "@/components/base/navbar/navbar.hoc";
 import { NavbarList } from "@/components/base/navbar/navbar.list";
 import { useNavbarContext } from "@/components/base/navbar/navbar.provider";
+import NavbarHOC from "@/hoc/navbar.hoc";
 import React from "react";
 import "./style.css";
 

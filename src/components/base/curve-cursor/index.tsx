@@ -1,8 +1,5 @@
 "use client";
-import {
-	BaseCursorCurveProps,
-	CurveCursorHOC,
-} from "@/components/base/curve-cursor/curve-cursor.hoc";
+import CurveCursorHOC, { BaseCursorCurveProps } from "@/hoc/curve-cursor.hoc";
 import { cn } from "@/libs/utils";
 import React from "react";
 
