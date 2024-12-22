@@ -1,5 +1,5 @@
 "use client";
-import { List } from "@/components/base/list";
+import List from "@/components/base/list";
 import { useNavbarContext } from "@/components/base/navbar/navbar.provider";
 import { NAVBAR_CONTENT } from "@/libs/constant";
 import { cn } from "@/libs/utils";

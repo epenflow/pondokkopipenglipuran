@@ -22,4 +22,4 @@ export const BaseCurveCursor: React.FC<BaseCursorCurveProps> = ({
 	);
 };
 
-export const CurveCursor = CurveCursorHOC(BaseCurveCursor);
+export default CurveCursorHOC(BaseCurveCursor);

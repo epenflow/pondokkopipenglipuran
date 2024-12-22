@@ -1,4 +1,4 @@
-import { List } from "@/components/base";
+import List from "@/components/base/list";
 import { WHO_WE_ARE_CONTENT } from "@/libs/constant";
 import { cn } from "@/libs/utils";
 import React from "react";

@@ -1,4 +1,4 @@
-import { List } from "@/components/base";
+import List from "@/components/base/list";
 import VIEW from "@/components/views";
 
 export default function Home() {

@@ -1,16 +1,12 @@
 import { GALLERY_CONTENT } from "@/libs/constant";
 import React from "react";
 
-const GalleryView: React.FC<React.ComponentProps<"article">> = ({
-	className,
-	ref,
-	...rest
-}) => {
+const GalleryView: React.FC = () => {
 	return (
-		<article {...rest} ref={ref} className="h-svh w-full">
-			<p className="text-background mix-blend-difference">
+		<article className="h-svh w-full">
+			<h1 className="text-background mix-blend-difference">
 				{GALLERY_CONTENT.LABEL}
-			</p>
+			</h1>
 		</article>
 	);
 };

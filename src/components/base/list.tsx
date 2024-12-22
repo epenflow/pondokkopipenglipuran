@@ -5,7 +5,7 @@ interface ListProps<T> {
 	children?: (list: T, index: number) => React.ReactNode;
 	render?: (list: T, index: number) => React.ReactNode;
 }
-export function List<T>({ lists, children, render }: ListProps<T>) {
+function List<T>({ lists, children, render }: ListProps<T>) {
 	if (children) {
 		return React.Children.toArray(
 			lists?.map((list, index) => children(list, index)),
@@ -18,3 +18,4 @@ export function List<T>({ lists, children, render }: ListProps<T>) {
 
 	return null;
 }
+export default List;
