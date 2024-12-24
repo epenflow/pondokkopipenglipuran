@@ -41,7 +41,7 @@ function CoffeeStoryHOC<T extends object>(
 						{
 							bottom: 20,
 							rotate: -90,
-							ease: "none",
+							ease: "sine",
 						},
 						0,
 					)
@@ -52,7 +52,7 @@ function CoffeeStoryHOC<T extends object>(
 							y: 0,
 							left: 150,
 							bottom: 0,
-							ease: "none",
+							ease: "sine",
 						},
 						0,
 					)
@@ -60,13 +60,13 @@ function CoffeeStoryHOC<T extends object>(
 						spoon,
 						{
 							rotate: -125,
-							ease: "none",
+							ease: "sine",
 						},
 						1,
 					)
 					.to(spoon, {
 						rotate: -90,
-						ease: "none",
+						ease: "sine",
 					});
 			},
 			{ scope: coffeeJourneyRef },
