@@ -28,12 +28,13 @@ function VideoHOC<T extends object>(
 				});
 				gsap.to(videoRef.current, {
 					scale: 1,
-					ease: "none",
+					ease: "sine",
+					duration: 1,
 					scrollTrigger: {
 						pin: containerRef.current,
-						start: "top top",
-						end: "bottom",
-						toggleActions: "play pause reverse reverse",
+						start: "clamp(top top)",
+						end: "clamp(bottom top)",
+						scrub: 1.5,
 					},
 				});
 			},
