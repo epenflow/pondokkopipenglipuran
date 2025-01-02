@@ -8,7 +8,7 @@ export default function ({ children }: React.PropsWithChildren) {
 
 	React.useEffect(() => {
 		function update(time: number) {
-			lenis.current?.lenis?.raf(time * 100);
+			lenis.current?.lenis?.raf(time * 1000);
 		}
 		gsap.ticker.add(update);
 
