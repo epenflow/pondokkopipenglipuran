@@ -15,6 +15,10 @@ export default {
 					'2xl': '1400px',
 				},
 			},
+			fontFamily: {
+				inter: 'var(--font-inter)',
+				bricolage: 'var(--font-bricolage)',
+			},
 		},
 	},
 	plugins: [],

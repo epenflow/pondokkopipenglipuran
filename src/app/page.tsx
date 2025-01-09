@@ -7,6 +7,7 @@ export default function Page() {
 			{Object.entries(Views).map(([key, View]) => (
 				<View key={key} />
 			))}
+			<div className="h-svh w-full" />
 		</main>
 	);
 }

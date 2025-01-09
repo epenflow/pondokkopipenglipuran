@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import { cn } from '~/libs/utils';
+import * as fonts from './fonts';
 import './globals.css';
 
 const Layout = dynamic(() => import('~/components/layout/app'));
@@ -15,7 +17,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`antialiased`}>
+			<body className={cn('antialiased', fonts.inter.variable, fonts.bricolage.variable)}>
 				<Layout>{children}</Layout>
 			</body>
 		</html>

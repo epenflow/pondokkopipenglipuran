@@ -1,0 +1,80 @@
+@tailwind components;
+
+@layer components {
+	.about-view {
+		min-height: 100vh;
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
+	.about--content-outer {
+		@apply container;
+		height: 100vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 10;
+	}
+	.about--content-inner {
+		@apply space-y-5 font-bricolage;
+		margin: 0 auto;
+		filter: blur(0.25rem);
+	}
+	.about--heading {
+		@apply font-medium text-5xl text-black/90;
+	}
+	.about--text {
+		@apply text-black/70;
+	}
+	.coffee--bean {
+		position: absolute;
+		height: 5rem;
+		width: 5rem;
+		top: var(--bean-y);
+		left: var(--bean-x);
+		background: var(--coffee-bean-image);
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: 10;
+	}
+	.bean--stopper-one {
+		width: 5rem;
+		height: 5rem;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.bean--stopper-two {
+		width: 6rem;
+		height: 6rem;
+		position: absolute;
+		top: var(--bean-y);
+		left: var(--bean-x);
+	}
+	.bean--stopper-tree {
+		position: absolute;
+		width: 5rem;
+		height: 5rem;
+	}
+
+	.grinder {
+		height: 24rem;
+		width: 24rem;
+		background: var(--grinder-image);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: relative;
+		z-index: 10;
+		filter: blur(0.25rem);
+	}
+	@media (width >= 1400px) {
+		.about--content-outer {
+			max-width: 50%;
+		}
+	}
+}
