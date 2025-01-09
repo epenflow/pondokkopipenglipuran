@@ -32,12 +32,13 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 					ease: 'sine.inOut',
 					opacity: 0.75,
 					scale: 0.75,
+					filter: 'blur(0.25rem)',
 					scrollTrigger: {
-						pin: scope.current,
+						trigger: scope.current,
 						start: 'top top',
-						end: 'bottom+=100%',
+						end: 'bottom',
 						scrub: 1.5,
-						markers: true,
+						markers: process.env.NODE_ENV === 'development',
 					},
 				});
 			},
