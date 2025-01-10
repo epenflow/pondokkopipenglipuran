@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { splitText } from '~/libs/utils';
 import './base.css';
 import hoc, { type Props } from './hoc';
 
@@ -29,51 +28,32 @@ const WhoWeAre: React.FC<Props> = ({ scope }) => {
 
 			<div className="about-intro--outer">
 				<div className="about-intro--inner">
-					<div className="inline-block overflow-hidden">
-						<h1
-							data-splitter
-							className="text-4xl text-black/90 font-medium">
-							{intro['heading']}
-						</h1>
-					</div>
-					{intro['texts'].map((text, key) => {
-						return (
-							<div
-								key={key}
-								className="text--content">
-								{splitText(text, 'word').map(($text, $key) => (
-									<p
-										key={$key}
-										className="inline-block overflow-hidden">
-										<span
-											data-splitter
-											className="inline-block whitespace-pre">
-											{$text}
-										</span>
-									</p>
-								))}
-							</div>
-						);
-					})}
+					<h1
+						data-text
+						className="heading--content">
+						{intro['heading']}
+					</h1>
+					<p
+						data-text
+						className="text--content text-justify">
+						{intro['texts'][0]}
+					</p>
+					<p
+						data-text
+						className="text--content text-justify">
+						{intro['texts'][1]}
+					</p>
 				</div>
+				<div className="spoon" />
 			</div>
 
 			<div className="about-description--outer">
 				<div className="about-description--inner">
-					<div className="text--content">
-						{splitText(description['text'], 'word').map((text, key) => (
-							<p
-								key={key}
-								className="inline-block overflow-hidden">
-								<span
-									data-splitter
-									className="inline-block whitespace-pre">
-									{text}
-								</span>
-							</p>
-						))}
-					</div>
-					{/* <p className="text--content text-center">{text}</p> */}
+					<p
+						data-text
+						className="text--content text-justify">
+						{description['text']}
+					</p>
 				</div>
 				<div className="about-description--inner">
 					<div className="grinder" />
@@ -81,7 +61,10 @@ const WhoWeAre: React.FC<Props> = ({ scope }) => {
 				</div>
 			</div>
 
-			{/* <div className="about-intro--outer">3</div> */}
+			<div className="about-coffee--outer">
+				<div className="coffee-cup" />
+				<div className="spoon-step" />
+			</div>
 		</section>
 	);
 };
@@ -104,6 +87,7 @@ const resources = {
 		'--pondok-kopi-image': `url('https://ucarecdn.com/2f9ea7c3-0cc1-43e1-b26d-8ea9dfd855c8/-/preview/1000x666/')`,
 		'--grinder-image': `url('https://ucarecdn.com/8dba19f5-fae2-4b1b-8f73-336aac5a96a9/-/preview/965x1000/')`,
 		'--spoon-image': `url('https://ucarecdn.com/d4d63d57-b9eb-4f89-a861-ffbb9ee43090/-/preview/990x437/')`,
+		'--coffee-cup-image': `url('https://ucarecdn.com/b01b96fd-572a-46ec-8a66-7723fdb6802d/-/preview/1000x494/')`,
 		'--seed-size': '5rem',
 	} as React.CSSProperties,
 

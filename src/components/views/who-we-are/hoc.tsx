@@ -13,23 +13,6 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 		const scope = React.useRef<HTMLElement>(null);
 		const { contextSafe } = useGSAP({ scope });
 
-		const revealTextOnScroll = contextSafe(
-			(value: string | object | Element | null, scrollTrigger?: ScrollTrigger.Vars) => {
-				const splitter: HTMLElement[] = gsap.utils.toArray(value);
-
-				splitter.forEach((split) => {
-					gsap.from(split, {
-						yPercent: 100,
-						ease: 'sine.inOut',
-						scrollTrigger: {
-							...scrollTrigger,
-							trigger: split,
-						},
-					});
-				});
-			},
-		);
-
 		const seedFlipOnScroll = contextSafe(() => {
 			const seeds: HTMLElement[] = gsap.utils.toArray('.seed');
 
@@ -44,6 +27,7 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 					start: 'top center',
 					end: 'center center',
 					scrub: 1.5,
+					markers: true,
 				},
 			});
 
@@ -51,9 +35,46 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 				tl.add(
 					Flip.fit(seed, '.about-description--outer .seed-step', {
 						...config,
+						rotate: 380,
 					}) as GSAPAnimation,
 					1,
 				);
+			});
+		});
+
+		const spoonFlipOnScroll = contextSafe(() => {
+			const spoon = scope.current!.querySelector('.spoon');
+			const tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: spoon,
+					start: 'top top',
+					end: 'bottom',
+					scrub: 1.5,
+					markers: process.env.NODE_ENV === 'development',
+				},
+			});
+			tl.add(
+				Flip.fit(spoon, '.spoon-step', {
+					duration: 1,
+					ease: 'sine.inOut',
+					rotate: -90,
+				}) as GSAPAnimation,
+			);
+		});
+
+		const textAnimateOnScroll = contextSafe(() => {
+			const texts: HTMLElement[] = gsap.utils.toArray('[data-text]');
+			texts.forEach((text) => {
+				gsap.from(text, {
+					filter: 'blur(0.25rem)',
+					scrollTrigger: {
+						trigger: text,
+						start: 'top center',
+						end: 'bottom center',
+						scrub: 1.5,
+						markers: process.env.NODE_ENV === 'development',
+					},
+				});
 			});
 		});
 
@@ -62,23 +83,20 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 				if (!contextSafe) return null;
 
 				const loadAnimations = contextSafe(() => {
-					revealTextOnScroll('[data-splitter]', {
-						start: 'top center',
-						end: 'bottom center',
-						scrub: 1.5,
-					});
 					gsap.to('.grinder', {
 						rotate: 380,
 						ease: 'sine.inOut',
 						scrollTrigger: {
 							trigger: '.about-description--outer',
-							start: 'top top',
+							start: 'top center',
 							end: 'bottom',
 							scrub: 1.5,
-							markers: true,
+							markers: process.env.NODE_ENV === 'development',
 						},
 					});
+					textAnimateOnScroll();
 					seedFlipOnScroll();
+					spoonFlipOnScroll();
 				});
 
 				loadAnimations();
