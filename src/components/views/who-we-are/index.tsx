@@ -1,219 +1,128 @@
 'use client';
-import { useGSAP } from '@gsap/react';
-import { Flip, gsap, ScrollTrigger } from 'gsap/all';
 import React from 'react';
-
-gsap.registerPlugin(useGSAP, ScrollTrigger, Flip);
-
+import { splitText } from '~/libs/utils';
 import './base.css';
-interface Props {
-	scope: React.RefObject<HTMLElement | null>;
-}
+import hoc, { type Props } from './hoc';
+
 const WhoWeAre: React.FC<Props> = ({ scope }) => {
-	const { texts, title, beans } = resources;
-	const CSSVariables = {
-		'--coffee-bean-image': `url('https://ucarecdn.com/6bc9a575-c48c-409d-9351-53947c26c61c/-/preview/600x414/')`,
-		'--grinder-image': `url('https://ucarecdn.com/8dba19f5-fae2-4b1b-8f73-336aac5a96a9/-/preview/965x1000/')`,
-	} as React.CSSProperties;
+	const { intro, CSSVariables, seedCoord, description } = resources;
 
 	return (
 		<section
-			style={CSSVariables}
 			ref={scope}
+			style={CSSVariables}
 			className="about-view">
-			{beans.map(({ x, y }, key) => {
-				const $CSSVariables = {
-					'--bean-x': x,
-					'--bean-y': y,
-				} as React.CSSProperties;
-				return (
-					<div
-						data-bean={key}
-						key={key}
-						style={$CSSVariables}
-						className="coffee--bean"
-					/>
-				);
-			})}
-
-			<div className="about--content-outer">
-				<div
-					data-content
-					className="about--content-inner">
-					<div className="bean--stopper-one" />
-					<h1 className="about--heading">{title}</h1>
-					{texts.map((text, key) => (
-						<div
-							key={key}
-							className="about--text text-justify">
-							<p>{text}</p>
-						</div>
-					))}
-				</div>
-			</div>
-
-			<div className="about--content-outer">
-				<div
-					data-content
-					className="about--content-inner">
-					<div className="about--text text-center">
-						<p>
-							Nestled in the heart of the serene Penglipuran Village, Pondok Kopi
-							offers more than just a cup of coffee – it provides an immersive
-							experience into the rich cultural heritage of Bali.
-						</p>
-					</div>
-				</div>
-				{beans.map(({ x, y }, key) => {
+			<div className="seed-container">
+				{seedCoord['default'].map(({ left, top }, key) => {
 					const $CSSVariables = {
-						'--bean-x': x,
-						'--bean-y': y,
+						'--seed-size': '5rem',
+						'--seed-left': left,
+						'--seed-top': top,
 					} as React.CSSProperties;
 					return (
 						<div
 							key={key}
 							style={$CSSVariables}
-							className="bean--stopper-two"
+							className="seed"
 						/>
 					);
 				})}
 			</div>
 
-			<div
-				data-grinder-trigger
-				className="about--content-outer">
-				<div
-					data-content
-					className="grinder"
-				/>
-				<div className="bean--stopper-tree" />
+			<div className="about-intro--outer">
+				<div className="seed-step" />
+				<div className="about-intro--inner">
+					<div className="inline-block overflow-hidden">
+						<h1
+							data-splitter
+							className="text-4xl text-black/90 font-medium">
+							{intro['heading']}
+						</h1>
+					</div>
+					{intro['texts'].map((text, key) => {
+						return (
+							<div
+								key={key}
+								className="text-black/70">
+								{splitText(text, 'word').map(($text, $key) => (
+									<p
+										key={$key}
+										className="inline-block overflow-hidden">
+										<span
+											data-splitter
+											className="inline-block whitespace-pre">
+											{$text}
+										</span>
+									</p>
+								))}
+							</div>
+						);
+					})}
+				</div>
 			</div>
+
+			<div className="about-description--outer">
+				<div className="seed-container">
+					{seedCoord['description'].map(({ left, top }, key) => {
+						const $CSSVariables = {
+							'--seed-size': '5rem',
+							'--seed-left': left,
+							'--seed-top': top,
+						} as React.CSSProperties;
+						return (
+							<div
+								key={key}
+								style={$CSSVariables}
+								className="seed-step"
+							/>
+						);
+					})}
+				</div>
+				<div className="about-description--inner">
+					<p className="text--content">{description['text']}</p>
+				</div>
+			</div>
+
+			<div className="about-intro--outer">3</div>
 		</section>
 	);
 };
 export default hoc(WhoWeAre);
 
-function hoc<T extends object>(Component: React.ComponentType<T & Props>) {
-	return function HOC(props: T) {
-		const scope = React.useRef<HTMLElement>(null);
-		useGSAP(
-			() => {
-				const contents: HTMLElement[] = gsap.utils.toArray('[data-content]');
-
-				contents.forEach((content) => {
-					gsap.to(content, {
-						filter: 'blur(0rem)',
-						ease: 'sine.inOut',
-						scrollTrigger: {
-							trigger: content,
-							start: 'center center',
-							end: 'bottom center',
-							scrub: 1.5,
-							// markers: process.env.NODE_ENV === 'development',
-						},
-					});
-				});
-
-				gsap.to('.grinder', {
-					rotate: 380,
-					scrollTrigger: {
-						pin: scope.current,
-						trigger: '[data-grinder-trigger]',
-						start: 'top top',
-						end: 'bottom',
-						markers: process.env.NODE_ENV === 'development',
-						scrub: 1.5,
-					},
-				});
-			},
-			{ scope },
-		);
-
-		useGSAP(
-			() => {
-				const beans: HTMLElement[] = gsap.utils.toArray('[data-bean]');
-				const stepperTwo: HTMLElement[] = gsap.utils.toArray('.bean--stopper-two');
-				const statesTwo = stepperTwo.map((state) => Flip.getState(state));
-				const config = { duration: 1, ease: 'sine.inOut' };
-
-				const flipTimeline = gsap.timeline({
-					scrollTrigger: {
-						trigger: scope.current,
-						start: 'top center',
-						end: 'bottom bottom',
-						scrub: 1.5,
-						// markers: process.env.NODE_ENV === 'development',
-					},
-				});
-
-				beans.forEach((bean) => {
-					flipTimeline.add(
-						Flip.fit(bean, '.bean--stopper-one', {
-							...config,
-							filter: 'blur(0.5rem)',
-						}) as GSAPAnimation,
-						'0',
-					);
-				});
-				statesTwo.forEach((state, index) => {
-					flipTimeline.add(
-						Flip.fit(beans[index], state, {
-							...config,
-							filter: 'blur(0rem)',
-							rotate: 380,
-						}) as GSAPAnimation,
-						'1',
-					);
-				});
-				beans.forEach((bean) => {
-					flipTimeline.add(
-						Flip.fit(bean, '.bean--stopper-tree', {
-							...config,
-							filter: 'blur(0rem)',
-						}) as GSAPAnimation,
-						'2',
-					);
-				});
-			},
-			{ scope },
-		);
-
-		return <Component {...{ ...props, scope }} />;
-	};
-}
 const resources = {
-	title: 'Who are we?',
-	texts: [
-		`Pondok Kopi was established by A.A Gde Joyti Rahadian and A.A Gde Krisna Adita in June 2017. This business is located in Penglipuran Tourism Village, specifically behind Karang Memadu. The name of the cafe is inspired by the name of Penglipuran Village, with the aim of attracting tourist visiting the village.`,
-		`In addition to supporting economic development and increasing tourist interest in visiting Penglipuran Village, Pondok Kopi also supports local farmers. The coffee beans produced by this cafe are sourced from local farmers, purchased in the form of green beans. These coffee beans are then processed at Pondok Kopi using traditional roasting methods`,
-	],
-	seed: {
-		alt: 'coffee seed',
-		src: 'https://ucarecdn.com/22a5b518-574d-4838-8fde-0d9d3220c0b2/-/preview/1000x696/',
+	intro: {
+		heading: `Who Are We?`,
+		texts: [
+			`Pondok Kopi was established by A.A Gde Joyti Rahadian and A.A Gde Krisna Adita in June 2017. This business is located in Penglipuran Tourism Village, specifically behind Karang Memadu. The name of the cafe is inspired by the name of Penglipuran Village, with the aim of attracting tourist visiting the village.`,
+			`In addition to supporting economic development and increasing tourist interest in visiting Penglipuran Village, Pondok Kopi also supports local farmers. The coffee beans produced by this cafe are sourced from local farmers, purchased in the form of green beans. These coffee beans are then processed at Pondok Kopi using traditional roasting methods`,
+		],
 	},
-	beans: [
-		{
-			x: '50%',
-			y: '5%',
-		},
-		{
-			y: '15%',
-			x: '15%',
-		},
-		{
-			y: '25%',
-			x: '35%',
-		},
-		{
-			y: '0%',
-			x: '5%',
-		},
-		{
-			y: '0%',
-			x: '60%',
-		},
-	] satisfies Array<{
-		x: string;
-		y: string;
-	}>,
+	description: {
+		text: `Nestled in the heart of the serene Penglipuran Village, Pondok Kopi offers more than just a cup of coffee – it provides an immersive experience into the rich cultural heritage of Bali.`,
+	},
+
+	CSSVariables: {
+		'--seed-image': `url('https://ucarecdn.com/6bc9a575-c48c-409d-9351-53947c26c61c/-/preview/600x414/')`,
+		'--pondok-kopi-image': `url('https://ucarecdn.com/2f9ea7c3-0cc1-43e1-b26d-8ea9dfd855c8/-/preview/1000x666/')`,
+		'--seed-size': '5rem',
+	} as React.CSSProperties,
+
+	seedCoord: {
+		default: [
+			{ top: '0%', left: '0%' },
+			{ top: '20%', left: '15%' },
+			{ top: '10%', left: '25%' },
+			{ top: '15%', left: '75%' },
+			{ top: '0%', left: '85%' },
+			{ top: '0%', left: '60%' },
+		],
+		description: [
+			{ top: '0%', left: '0%' },
+			{ top: '25%', left: '15%' },
+			{ top: '75%', left: '25%' },
+			{ top: '60%', left: '75%' },
+			{ top: '0%', left: '85%' },
+			{ top: '0%', left: '60%' },
+		],
+	} satisfies Record<string, Array<{ top: string; left: string }>>,
 };
