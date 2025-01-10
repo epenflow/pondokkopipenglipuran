@@ -83,7 +83,7 @@ const WhoWeAre: React.FC<Props> = ({ scope }) => {
 				</div>
 			</div>
 
-			<div className="about-intro--outer">3</div>
+			{/* <div className="about-intro--outer">3</div> */}
 		</section>
 	);
 };

@@ -32,13 +32,20 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 
 		const seedFlipOnScroll = contextSafe(() => {
 			const seeds: HTMLElement[] = gsap.utils.toArray('.seed');
+			const secondStep: HTMLElement[] = gsap.utils.toArray(
+				'.about-description--outer .seed-container .seed-step',
+			);
+			const config = {
+				duration: 1,
+				ease: 'sine.inOut',
+			};
+			const secondStates = secondStep.map((state) => Flip.getState(state));
 
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: scope.current,
-					endTrigger: '.about-intro--outer',
 					start: 'top center',
-					end: 'bottom center',
+					end: 'center center',
 					scrub: 1.5,
 					markers: true,
 				},
@@ -46,10 +53,19 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 			seeds.forEach((seed) => {
 				tl.add(
 					Flip.fit(seed, '.about-intro--outer .seed-step', {
-						duration: 1,
-						ease: 'sine.inOut',
+						...config,
+						rotate: 380,
 					}) as GSAPAnimation,
 					0,
+				);
+			});
+
+			seeds.forEach((seed, index) => {
+				tl.add(
+					Flip.fit(seed, secondStates[index], {
+						...config,
+					}) as GSAPAnimation,
+					1,
 				);
 			});
 		});
