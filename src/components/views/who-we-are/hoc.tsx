@@ -27,7 +27,7 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 					start: 'top center',
 					end: 'center center',
 					scrub: 1.5,
-					markers: true,
+					markers: process.env.NODE_ENV === 'development',
 				},
 			});
 
@@ -86,6 +86,7 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 					gsap.to('.grinder', {
 						rotate: 380,
 						ease: 'sine.inOut',
+						scale: 1,
 						scrollTrigger: {
 							trigger: '.about-description--outer',
 							start: 'top center',
