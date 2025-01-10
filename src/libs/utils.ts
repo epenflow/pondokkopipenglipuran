@@ -9,6 +9,11 @@ export function getPropertyValue(property: string) {
 	return getComputedStyle(document.documentElement).getPropertyValue(property);
 }
 
+export function splitText(text: string, type: 'char' | 'word') {
+	const separator = type === 'char' ? '' : /(?=\s)|(?<=\s)/;
+	return text.split(separator);
+}
+
 export function getComputeGridDimensions(size: number) {
 	const row = Math.ceil(window.innerWidth / size);
 	const column = Math.ceil(window.innerHeight / size);
