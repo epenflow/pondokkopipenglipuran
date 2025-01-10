@@ -10,7 +10,7 @@ export function getPropertyValue(property: string) {
 }
 
 export function splitText(text: string, type: 'char' | 'word') {
-	const separator = type === 'char' ? '' : /(?=\s)|(?<=\s)/;
+	const separator = type === 'char' ? ' ' : /(?=\s)|(?<=\s)/;
 	return text.split(separator);
 }
 

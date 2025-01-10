@@ -12,25 +12,22 @@ const WhoWeAre: React.FC<Props> = ({ scope }) => {
 			ref={scope}
 			style={CSSVariables}
 			className="about-view">
-			<div className="seed-container">
-				{seedCoord['default'].map(({ left, top }, key) => {
-					const $CSSVariables = {
-						'--seed-size': '5rem',
-						'--seed-left': left,
-						'--seed-top': top,
-					} as React.CSSProperties;
-					return (
-						<div
-							key={key}
-							style={$CSSVariables}
-							className="seed"
-						/>
-					);
-				})}
-			</div>
+			{seedCoord['default'].map(({ left, top }, key) => {
+				const $CSSVariables = {
+					'--seed-size': '5rem',
+					'--seed-left': left,
+					'--seed-top': top,
+				} as React.CSSProperties;
+				return (
+					<div
+						key={key}
+						style={$CSSVariables}
+						className="seed"
+					/>
+				);
+			})}
 
 			<div className="about-intro--outer">
-				<div className="seed-step" />
 				<div className="about-intro--inner">
 					<div className="inline-block overflow-hidden">
 						<h1
@@ -43,7 +40,7 @@ const WhoWeAre: React.FC<Props> = ({ scope }) => {
 						return (
 							<div
 								key={key}
-								className="text-black/70">
+								className="text--content">
 								{splitText(text, 'word').map(($text, $key) => (
 									<p
 										key={$key}
@@ -62,24 +59,25 @@ const WhoWeAre: React.FC<Props> = ({ scope }) => {
 			</div>
 
 			<div className="about-description--outer">
-				<div className="seed-container">
-					{seedCoord['description'].map(({ left, top }, key) => {
-						const $CSSVariables = {
-							'--seed-size': '5rem',
-							'--seed-left': left,
-							'--seed-top': top,
-						} as React.CSSProperties;
-						return (
-							<div
+				<div className="about-description--inner">
+					<div className="text--content">
+						{splitText(description['text'], 'word').map((text, key) => (
+							<p
 								key={key}
-								style={$CSSVariables}
-								className="seed-step"
-							/>
-						);
-					})}
+								className="inline-block overflow-hidden">
+								<span
+									data-splitter
+									className="inline-block whitespace-pre">
+									{text}
+								</span>
+							</p>
+						))}
+					</div>
+					{/* <p className="text--content text-center">{text}</p> */}
 				</div>
 				<div className="about-description--inner">
-					<p className="text--content">{description['text']}</p>
+					<div className="grinder" />
+					<div className="seed-step" />
 				</div>
 			</div>
 
@@ -104,6 +102,8 @@ const resources = {
 	CSSVariables: {
 		'--seed-image': `url('https://ucarecdn.com/6bc9a575-c48c-409d-9351-53947c26c61c/-/preview/600x414/')`,
 		'--pondok-kopi-image': `url('https://ucarecdn.com/2f9ea7c3-0cc1-43e1-b26d-8ea9dfd855c8/-/preview/1000x666/')`,
+		'--grinder-image': `url('https://ucarecdn.com/8dba19f5-fae2-4b1b-8f73-336aac5a96a9/-/preview/965x1000/')`,
+		'--spoon-image': `url('https://ucarecdn.com/d4d63d57-b9eb-4f89-a861-ffbb9ee43090/-/preview/990x437/')`,
 		'--seed-size': '5rem',
 	} as React.CSSProperties,
 
