@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+  .header-container {
+    @apply font-inter font-medium;
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    padding: 1rem 1rem;
+    z-index: 99999;
+  }
+  .header-navbar {
+    @apply container bg-white/50 backdrop-blur-md border;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+  }
+}
