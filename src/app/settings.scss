@@ -1,4 +1,5 @@
 $text-blur: 0.25rem;
+$coffee-seed-size: 5rem;
 
 @mixin background-image($url) {
     background: var($url);

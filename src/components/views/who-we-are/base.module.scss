@@ -5,11 +5,12 @@
 @layer components {
 
     .content--outer {
+        @apply font-bricolage;
         @include views;
     }
 
     .content--container {
-        @apply space-y-10;
+        @apply space-y-10 container;
     }
 
     .content--inner {
@@ -17,12 +18,14 @@
     }
 
     .text--content {
-        text-align: justify;
+        @apply font-medium text-justify;
         filter: blur($text-blur);
+        @include text();
     }
 
     .heading--content {
         filter: blur($text-blur);
+        @include heading();
     }
 
     .content--image {
@@ -36,6 +39,12 @@
         height: 24rem;
         @include background-image(--spoon-image);
         background-size: contain;
+    }
+
+    @media(screen(2xl)) {
+        .content--container {
+            width: 50%;
+        }
     }
 
 }

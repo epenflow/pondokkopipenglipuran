@@ -1,21 +1,21 @@
 import React from 'react';
-import './base.scss';
+import styles from './base.module.scss';
 
 const WhoWeAre = () => {
 	const { CSSVariables, heading, description, texts } = resources;
 	return (
 		<section
 			style={CSSVariables}
-			className="content--outer">
-			<div className="content--container">
-				<div className="content--image" />
-				<div className="content--inner">
-					<h1 className="heading--content">{heading}</h1>
-					<p className="text--content">{texts[0]}</p>
-					<p className="text--content">{texts[1]}</p>
+			className={styles['content--outer']}>
+			<div className={styles['content--container']}>
+				<div className={styles['content--image']} />
+				<div className={styles['content--inner']}>
+					<h1 className={styles['heading--content']}>{heading}</h1>
+					<p className={styles['text--content']}>{texts[0]}</p>
+					<p className={styles['text--content']}>{texts[1]}</p>
 				</div>
-				<div className="spoon--image" />
-				<p className="text--content">{description}</p>
+				<div className={styles['spoon--image']} />
+				<p className={styles['text--content']}>{description}</p>
 			</div>
 		</section>
 	);
