@@ -2,7 +2,7 @@
 
 @layer components {
 	.header-navbar {
-		@apply font-inter font-medium bg-black/90 text-white backdrop-blur-sm border border-white/10 text-sm;
+		@apply font-inter font-medium bg-black/90 text-white backdrop-blur-sm border border-white/10 text-xs;
 		position: fixed;
 		top: 25px;
 		left: 50%;

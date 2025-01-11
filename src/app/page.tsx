@@ -13,8 +13,9 @@ export default function Page() {
 
 const resources = {
 	Views: {
-		Hero: dynamic(() => import('~/components/views/hero')),
+		// Hero: dynamic(() => import('~/components/views/hero')),
 		WhoWeAre: dynamic(() => import('~/components/views/who-we-are')),
-		Videos: dynamic(() => import('~/components/views/videos')),
+		Grinder: dynamic(() => import('~/components/views/grinder')),
+		// Videos: dynamic(() => import('~/components/views/videos')),
 	},
 };

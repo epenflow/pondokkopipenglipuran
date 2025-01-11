@@ -13,8 +13,9 @@ const Hero: React.FC<Props> = ({ scope }) => {
 			ref={scope}
 			style={CSSVariables}
 			className="hero-view">
-			<div className="hero-container">
-				<div className="hero-container--image" />
+			<div className="hero--content">
+				<h1 className="hero--heading">Pondok Kopi</h1>
+				<button className="hero--button">Learn More</button>
 			</div>
 		</section>
 	);

@@ -1,0 +1,31 @@
+@tailwind components;
+
+@layer components {
+	.grinder-view {
+		min-height: 100svh;
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
+	.grinder--content-outer {
+		@apply container;
+		height: 100svh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.grinder--image {
+		width: 100%;
+		height: 24rem;
+		background: var(--grinder-image);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	@media (width >= 1400px) {
+		.grinder--content-outer {
+			width: 50%;
+		}
+	}
+}
