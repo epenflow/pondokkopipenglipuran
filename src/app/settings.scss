@@ -1,0 +1,29 @@
+$text-blur: 0.25rem;
+
+@mixin background-image($url) {
+    background: var($url);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin heading {
+    @apply text-5xl text-black/90;
+}
+
+@mixin text {
+    @apply text-lg text-black/70;
+}
+
+@mixin views {
+    min-height: 100svh;
+    height: 100%;
+    width: 100%;
+}

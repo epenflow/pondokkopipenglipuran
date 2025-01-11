@@ -1,39 +1,21 @@
 import React from 'react';
-import './base.css';
+import './base.scss';
+
 const WhoWeAre = () => {
 	const { CSSVariables, heading, description, texts } = resources;
 	return (
 		<section
 			style={CSSVariables}
-			className="about-view">
-			<div className="about--content-outer">
-				<div className="about--content-image" />
-				<div className="about--content-inner">
-					<h1
-						data-text
-						className="about--heading">
-						{heading}
-					</h1>
-					<p
-						data-text
-						className="about--text">
-						{texts[0]}
-					</p>
-					<p
-						data-text
-						className="about--text">
-						{texts[1]}
-					</p>
+			className="content--outer">
+			<div className="content--container">
+				<div className="content--image" />
+				<div className="content--inner">
+					<h1 className="heading--content">{heading}</h1>
+					<p className="text--content">{texts[0]}</p>
+					<p className="text--content">{texts[1]}</p>
 				</div>
-				<div
-					data-text
-					className="spoon"
-				/>
-				<p
-					data-text
-					className="about--text">
-					{description}
-				</p>
+				<div className="spoon--image" />
+				<p className="text--content">{description}</p>
 			</div>
 		</section>
 	);
@@ -48,7 +30,7 @@ const resources = {
 	description: `Nestled in the heart of the serene Penglipuran Village, Pondok Kopi offers more than just a cup of coffee – it provides an immersive experience into the rich cultural heritage of Bali.`,
 
 	CSSVariables: {
-		'--about-content-image': `url('https://ucarecdn.com/b7335594-1bb7-49ac-9b6a-91e859a9073c/-/preview/1000x666/')`,
+		'--content-image': `url('https://ucarecdn.com/b7335594-1bb7-49ac-9b6a-91e859a9073c/-/preview/1000x666/')`,
 		'--spoon-image': `url('https://ucarecdn.com/ea9a2d6c-87a6-4487-b0a3-5f428e33adc7/-/preview/948x185/')`,
 	} as React.CSSProperties,
 };

@@ -1,0 +1,29 @@
+@use 'tailwindcss/base';
+@use 'tailwindcss/components';
+@use 'tailwindcss/utilities';
+
+@use './settings.scss' as *;
+
+
+@layer components {
+    .text--content {
+        @apply font-bricolage;
+        @include text;
+    }
+
+    .content--container {
+        @apply container;
+        @include views
+    }
+
+    .heading--content {
+        @apply font-bricolage font-medium;
+        @include heading;
+    }
+
+    @media(screen(2xl)) {
+        .content--container {
+            width: 50%;
+        }
+    }
+}

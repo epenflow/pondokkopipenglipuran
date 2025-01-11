@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { cn } from '~/libs/utils';
 import * as fonts from './fonts';
-import './globals.css';
+import './globals.scss';
 
 const Layout = dynamic(() => import('~/components/layout/app'));
 export const metadata: Metadata = {

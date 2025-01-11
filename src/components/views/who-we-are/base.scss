@@ -1,0 +1,41 @@
+@use '../../../app/settings.scss' as *;
+@use 'tailwindcss/components';
+
+
+@layer components {
+
+    .content--outer {
+        @include views;
+    }
+
+    .content--container {
+        @apply space-y-10;
+    }
+
+    .content--inner {
+        @apply space-y-4;
+    }
+
+    .text--content {
+        text-align: justify;
+        filter: blur($text-blur);
+    }
+
+    .heading--content {
+        filter: blur($text-blur);
+    }
+
+    .content--image {
+        width: 100%;
+        height: 24rem;
+        @include background-image(--content-image);
+    }
+
+    .spoon--image {
+        width: 100%;
+        height: 24rem;
+        @include background-image(--spoon-image);
+        background-size: contain;
+    }
+
+}
