@@ -1,7 +1,9 @@
-import type React from 'react';
+'use client';
+import React from 'react';
 import styles from './base.module.scss';
 const Grinder = () => {
 	const { CSSVariables } = resoureces;
+
 	return (
 		<section
 			style={CSSVariables}

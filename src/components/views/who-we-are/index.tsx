@@ -1,10 +1,26 @@
+'use client';
+import { useGSAP } from '@gsap/react';
+import { gsap } from 'gsap';
 import React from 'react';
 import styles from './base.module.scss';
 
 const WhoWeAre = () => {
 	const { CSSVariables, heading, description, texts } = resources;
+	const scope = React.useRef<HTMLElement>(null);
+	useGSAP(
+		() => {
+			/**
+			 * issue when using class module
+			 */
+			gsap.to(`.${styles['content--outer']}`, {
+				scale: 1000,
+			});
+		},
+		{ scope },
+	);
 	return (
 		<section
+			ref={scope}
 			style={CSSVariables}
 			className={styles['content--outer']}>
 			<div className={styles['content--container']}>
