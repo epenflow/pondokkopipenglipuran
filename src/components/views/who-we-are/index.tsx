@@ -9,12 +9,31 @@ const WhoWeAre = () => {
 			<div className="about--content-outer">
 				<div className="about--content-image" />
 				<div className="about--content-inner">
-					<h1 className="about--heading">{heading}</h1>
-					<p className="about--text">{texts[0]}</p>
-					<p className="about--text">{texts[1]}</p>
+					<h1
+						data-text
+						className="about--heading">
+						{heading}
+					</h1>
+					<p
+						data-text
+						className="about--text">
+						{texts[0]}
+					</p>
+					<p
+						data-text
+						className="about--text">
+						{texts[1]}
+					</p>
 				</div>
-				<div className="spoon" />
-				<p className="about--text">{description}</p>
+				<div
+					data-text
+					className="spoon"
+				/>
+				<p
+					data-text
+					className="about--text">
+					{description}
+				</p>
 			</div>
 		</section>
 	);

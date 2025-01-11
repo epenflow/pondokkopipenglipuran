@@ -26,9 +26,11 @@
 	}
 	.about--heading {
 		@apply text-black/90 text-4xl font-medium;
+		filter: blur(0.25rem);
 	}
 	.about--text {
 		@apply text-black/70 text-justify;
+		filter: blur(0.25rem);
 	}
 	.spoon {
 		height: 15rem;
