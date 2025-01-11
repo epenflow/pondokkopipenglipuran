@@ -8,6 +8,8 @@ const Grinder = () => {
 			className="grinder-view">
 			<div className="grinder--content-outer">
 				<div className="grinder--image" />
+				<div className="coffee--seed-step" />
+				<div className="spoon--step" />
 			</div>
 		</section>
 	);
