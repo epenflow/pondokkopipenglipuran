@@ -1,19 +1,25 @@
 @tailwind components;
 
 @layer components {
-  .header-container {
-    @apply font-inter font-medium;
-    position: fixed;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    width: 100%;
-    padding: 1rem 1rem;
-    z-index: 99999;
-  }
-  .header-navbar {
-    @apply container bg-white/50 backdrop-blur-md border;
-    padding: 1rem 1.5rem;
-    border-radius: 2rem;
-  }
+	.header-navbar {
+		@apply font-inter font-medium bg-black/90 text-white backdrop-blur-sm border border-white/10 text-sm;
+		position: fixed;
+		top: 25px;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		padding: 10px 30px;
+		border-radius: 50px;
+		z-index: 99999;
+	}
+	.navbar-content--outer {
+		@apply bg-black/90 backdrop-blur-md border border-white/10 text-white opacity-0;
+		position: fixed;
+		top: 25px;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		height: 0svh;
+		border-radius: 50px;
+		width: 0%;
+		z-index: 9999;
+	}
 }
