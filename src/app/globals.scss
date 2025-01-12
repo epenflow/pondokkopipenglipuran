@@ -4,13 +4,19 @@
 @use 'tailwindcss/utilities';
 
 
+
 @layer components {
     .content--container {
-        @apply container;
+        @apply container data-[flag-border=true]:border data-[flag-border=true]:border-y-purple-500;
     }
 
     .text--content {
         text-align: justify;
+        @include text-primary;
+    }
+
+    .heading--content {
+        @include heading-primary;
     }
 
     @media(screen(2xl)) {

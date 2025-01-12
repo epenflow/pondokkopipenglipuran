@@ -12,4 +12,4 @@ const Header: React.FC<Props> = ({ scope, fnToggle }) => {
 		</header>
 	);
 };
-export default hoc(Header);
+export default hoc(React.memo(Header));

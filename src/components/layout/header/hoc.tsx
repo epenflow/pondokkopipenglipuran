@@ -9,7 +9,7 @@ export interface Props {
 	fnToggle: <T>(event: React.MouseEvent<T>) => void;
 }
 export default function hoc<T extends object>(Component: React.ComponentType<T & Props>) {
-	return function HOC(props: T) {
+	function HOC(props: T) {
 		const scope = React.useRef<HTMLElement>(null);
 		const [isActive, setActive] = React.useState<boolean>(false);
 		const timeline = React.useRef<GSAPTimeline>(null);
@@ -48,5 +48,6 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 			reveal();
 		}, [reveal]);
 		return <Component {...{ ...props, scope, fnToggle }} />;
-	};
+	}
+	return React.memo(HOC);
 }

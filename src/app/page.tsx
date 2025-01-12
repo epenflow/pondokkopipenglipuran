@@ -1,3 +1,5 @@
+import dynamic from 'next/dynamic';
+
 export default function Page() {
 	const { Views } = resources;
 	return (
@@ -11,6 +13,7 @@ export default function Page() {
 
 const resources = {
 	Views: {
+		About: dynamic(() => import('~/components/views/about')),
 		// Hero: dynamic(() => import('~/components/views/hero')),
 		// WhoWeAre: dynamic(() => import('~/components/views/who-we-are')),
 		// Grinder: dynamic(() => import('~/components/views/grinder')),

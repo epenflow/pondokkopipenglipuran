@@ -1,0 +1,37 @@
+@use 'tailwindcss/components';
+@use '../../../app/settings.scss' as *;
+
+$image-width: 100%;
+$image-height: 24rem;
+
+@mixin image-size {
+    width: $image-width;
+    height: $image-height;
+    border-radius: $border-radius;
+}
+
+@layer components {
+    .about--section {
+        @apply py-10 data-[flag-border=true]:border data-[flag-border=true]:border-red-500;
+        @include height-screen;
+
+        .content--container {
+            @apply font-bricolage space-y-10;
+
+            .content--outer {
+                @apply space-y-4;
+            }
+
+            .content--image {
+                @include image-size();
+                @include background-image(--content-image);
+            }
+
+            .spoon--image {
+                @include image-size();
+                @include background-image(--spoon-image, contain);
+            }
+        }
+
+    }
+}
