@@ -1,17 +1,17 @@
 'use client';
 import React from 'react';
-import styles from './base.module.scss';
+import './base.scss';
 const Grinder = () => {
 	const { CSSVariables } = resoureces;
 
 	return (
 		<section
 			style={CSSVariables}
-			className={styles['content--outer']}>
-			<div className={styles['content--container']}>
-				<div className={styles['content--image']} />
-				<div className={styles['coffee--seed-step']} />
-				<div className={styles['spoon--step']} />
+			className="grinder">
+			<div className="content--container">
+				<div className="content--image" />
+				<div className="coffee--seed-step" />
+				<div className="spoon--step" />
 			</div>
 		</section>
 	);

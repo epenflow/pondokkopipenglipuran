@@ -10,16 +10,16 @@ const WhoWeAre = () => {
 		<section
 			ref={scope}
 			style={CSSVariables}
-			className={'about'}>
-			<div className={'content--container'}>
-				<div className={'content--image'} />
-				<div className={'content--inner'}>
-					<h1 className={'heading--content'}>{heading}</h1>
-					<p className={'text--content'}>{texts[0]}</p>
-					<p className={'text--content'}>{texts[1]}</p>
+			className="about">
+			<div className="content--container">
+				<div className="content--image" />
+				<div className="content--inner">
+					<h1 className="heading--content">{heading}</h1>
+					<p className="text--content">{texts[0]}</p>
+					<p className="text--content">{texts[1]}</p>
 				</div>
-				<div className={'spoon--image'} />
-				<p className={'text--content'}>{description}</p>
+				<div className="spoon--image" />
+				<p className="text--content">{description}</p>
 			</div>
 		</section>
 	);
