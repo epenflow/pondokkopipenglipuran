@@ -15,6 +15,7 @@ const Lenis: React.FC<
 			lenisRef.current?.lenis?.raf(time * frameRate);
 		}
 
+		gsap.ticker.lagSmoothing(0);
 		gsap.ticker.add(update);
 
 		return () => gsap.ticker.remove(update);

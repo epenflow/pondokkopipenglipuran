@@ -1,37 +1,25 @@
 'use client';
 import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
 import React from 'react';
-import styles from './base.module.scss';
-
+import './base.scss';
 const WhoWeAre = () => {
 	const { CSSVariables, heading, description, texts } = resources;
 	const scope = React.useRef<HTMLElement>(null);
-	useGSAP(
-		() => {
-			/**
-			 * issue when using class module
-			 */
-			gsap.to(`.${styles['content--outer']}`, {
-				scale: 1000,
-			});
-		},
-		{ scope },
-	);
+	useGSAP(() => {}, { scope });
 	return (
 		<section
 			ref={scope}
 			style={CSSVariables}
-			className={styles['content--outer']}>
-			<div className={styles['content--container']}>
-				<div className={styles['content--image']} />
-				<div className={styles['content--inner']}>
-					<h1 className={styles['heading--content']}>{heading}</h1>
-					<p className={styles['text--content']}>{texts[0]}</p>
-					<p className={styles['text--content']}>{texts[1]}</p>
+			className={'about'}>
+			<div className={'content--container'}>
+				<div className={'content--image'} />
+				<div className={'content--inner'}>
+					<h1 className={'heading--content'}>{heading}</h1>
+					<p className={'text--content'}>{texts[0]}</p>
+					<p className={'text--content'}>{texts[1]}</p>
 				</div>
-				<div className={styles['spoon--image']} />
-				<p className={styles['text--content']}>{description}</p>
+				<div className={'spoon--image'} />
+				<p className={'text--content'}>{description}</p>
 			</div>
 		</section>
 	);

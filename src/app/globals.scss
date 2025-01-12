@@ -1,3 +1,15 @@
 @use 'tailwindcss/base';
 @use 'tailwindcss/components';
 @use 'tailwindcss/utilities';
+
+
+@layer components {
+    .content--container {
+        @apply container;
+    }
+
+    .text--content {
+        text-align: justify;
+    }
+
+}
