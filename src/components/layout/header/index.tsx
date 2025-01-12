@@ -1,14 +1,14 @@
 'use client';
 import React from 'react';
-import './base.css';
+import './base.scss';
 import hoc, { type Props } from './hoc';
-const Header: React.FC<Props> = ({ scope, fnToggleMenu }) => {
+const Header: React.FC<Props> = ({ scope, fnToggle }) => {
 	return (
 		<header ref={scope}>
-			<nav className="header-navbar">
-				<button onClick={fnToggleMenu}>Menu</button>
+			<nav className="navbar">
+				<button onClick={fnToggle}>Menu</button>
 			</nav>
-			<nav className="navbar-content--outer"></nav>
+			<nav className="navbar--content-outer"></nav>
 		</header>
 	);
 };

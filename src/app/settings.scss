@@ -1,5 +1,9 @@
 $text-blur: 0.25rem;
 $coffee-seed-size: 5rem;
+$max-width-content--container: 50%;
+$border-radius: 20px;
+$button-padding : 10px 20px;
+
 
 @mixin background-image($url) {
     background: var($url);
@@ -15,16 +19,20 @@ $coffee-seed-size: 5rem;
     transform: translate(-50%, -50%);
 }
 
-@mixin heading {
+@mixin button-style {
+    @apply bg-black/90 border border-white/10 text-white backdrop-blur-lg;
+    border-radius: $border-radius;
+}
+
+@mixin heading-primary {
     @apply text-5xl text-black/90;
 }
 
-@mixin text {
+@mixin text-primary {
     @apply text-lg text-black/70;
 }
 
-@mixin views {
+@mixin height-screen {
     min-height: 100svh;
     height: 100%;
-    width: 100%;
 }

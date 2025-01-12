@@ -1,3 +1,4 @@
+@use './settings.scss' as *;
 @use 'tailwindcss/base';
 @use 'tailwindcss/components';
 @use 'tailwindcss/utilities';
@@ -14,7 +15,8 @@
 
     @media(screen(2xl)) {
         .content--container {
-            width: 50%;
+            max-width: $max-width-content--container;
+            width: 100%;
         }
     }
 

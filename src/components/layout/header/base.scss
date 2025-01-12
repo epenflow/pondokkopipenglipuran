@@ -1,0 +1,30 @@
+@use 'tailwindcss/components';
+@use '../../../app/settings.scss' as *;
+
+$navbar-top: 25px;
+$navbar-zIndex: 9999999;
+
+@layer components {
+	.navbar {
+		@apply font-inter text-xs font-medium;
+		position: fixed;
+		top: $navbar-top;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		padding: $button-padding;
+		z-index: $navbar-zIndex;
+		@include button-style;
+	}
+
+	.navbar--content-outer {
+		@apply bg-black/90 text-white border border-white/10 backdrop-blur-lg;
+		position: fixed;
+		top: $navbar-top;
+		width: 0%;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		border-radius: $border-radius;
+		min-height: 0svh;
+		z-index: calc($navbar-zIndex / 2);
+	}
+}

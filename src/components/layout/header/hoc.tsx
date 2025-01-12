@@ -6,46 +6,47 @@ gsap.registerPlugin(useGSAP);
 
 export interface Props {
 	scope: React.RefObject<HTMLElement | null>;
-	fnToggleMenu: (event: React.MouseEvent) => void;
+	fnToggle: <T>(event: React.MouseEvent<T>) => void;
 }
 export default function hoc<T extends object>(Component: React.ComponentType<T & Props>) {
 	return function HOC(props: T) {
 		const scope = React.useRef<HTMLElement>(null);
 		const [isActive, setActive] = React.useState<boolean>(false);
-		const toggleTween = React.useRef<GSAPTimeline>(null);
+		const timeline = React.useRef<GSAPTimeline>(null);
 
-		useGSAP(
+		const { contextSafe } = useGSAP(
 			() => {
-				toggleTween.current = gsap.timeline({ paused: true }).to('.navbar-content--outer', {
-					height: '100svh',
+				timeline.current = gsap.timeline({ paused: true }).to('.navbar--content-outer', {
 					width: '100%',
+					height: '100svh',
 					top: '0px',
 					borderRadius: '0px',
-					opacity: '100%',
-					ease: 'sine.inOut',
 				});
 			},
 			{ scope },
 		);
-		const fnToggleMenu = (event: React.MouseEvent) => {
-			event.preventDefault();
-			event.stopPropagation();
-			setActive((prev) => !prev);
-		};
 
-		useGSAP(
-			() => {
-				if (isActive) {
-					document.body.style.overflow = 'hidden';
-					toggleTween.current?.play();
-				} else {
-					document.body.style.overflow = 'unset';
-					toggleTween.current?.reverse();
-				}
+		const fnToggle = React.useCallback(
+			<T,>(event: React.MouseEvent<T>) => {
+				event.preventDefault();
+				setActive((prev) => !prev);
 			},
-			{ scope, dependencies: [isActive] },
+			[setActive],
 		);
 
-		return <Component {...{ ...props, scope, fnToggleMenu }} />;
+		const reveal = contextSafe(() => {
+			if (isActive) {
+				console.log('trigger', timeline);
+				timeline.current?.play();
+			} else {
+				console.log('trigger', timeline);
+				timeline.current?.reverse();
+			}
+		});
+
+		React.useEffect(() => {
+			reveal();
+		}, [reveal]);
+		return <Component {...{ ...props, scope, fnToggle }} />;
 	};
 }
