@@ -1,12 +1,15 @@
 import dynamic from 'next/dynamic';
+import React from 'react';
 
 export default function Page() {
 	const { Views } = resources;
 	return (
 		<main>
-			{Object.entries(Views).map(([key, View]) => (
-				<View key={key} />
-			))}
+			<React.Suspense>
+				{Object.entries(Views).map(([key, View]) => (
+					<View key={key} />
+				))}
+			</React.Suspense>
 		</main>
 	);
 }
