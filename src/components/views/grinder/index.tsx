@@ -13,7 +13,6 @@ const Grinder: React.FC<Props> = ({ scope }) => {
 			data-flag-border={flags['border']}
 			className="grinder">
 			<div
-				data-spoon="end"
 				data-flag-border={flags['border']}
 				className="content--container">
 				<div className="grinder--image" />

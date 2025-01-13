@@ -9,15 +9,39 @@
         justify-content: center;
         position: relative;
         @include height-screen;
+        overflow: hidden;
 
-
-        .video--content {
-            @apply data-[flag-border="true"]:border data-[flag-border="true"]:border-s-sky-500;
-            width: 100%;
-            height: 100svh;
+        .video--container {
             position: relative;
             z-index: 10;
+            width: 100%;
+            height: 100svh;
+
+            .video--content {
+                @apply data-[flag-border="true"]:border data-[flag-border="true"]:border-s-sky-500;
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+        }
+
+
+        .spoon--step {
+            @apply data-[flag-border="true"]:border data-[flag-border="true"]:border-lime-500;
+            position: absolute;
+            height: 24rem;
+            width: 100%;
+            transform: rotate(90deg);
         }
 
     }
+
+    @media(screen(2xl)) {
+        .videos {
+            .spoon--step {
+                width: 50%;
+            }
+        }
+    }
+
 }

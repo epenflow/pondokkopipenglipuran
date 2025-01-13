@@ -22,10 +22,11 @@ const Page: React.FC<Props> = ({ scope }) => {
 export default hoc(Page);
 const resources = {
 	Views: {
+		SpacerHeader: dynamic(() => import('~/components/views/spacer')),
 		About: dynamic(() => import('~/components/views/about')),
 		Grinder: dynamic(() => import('~/components/views/grinder')),
 		Videos: dynamic(() => import('~/components/views/videos')),
-		Spacer: dynamic(() => import('~/components/views/spacer')),
+		SpacerFooter: dynamic(() => import('~/components/views/spacer')),
 	},
 };
 function hoc<T extends object>(Component: React.ComponentType<T & Props>) {
@@ -45,7 +46,7 @@ function hoc<T extends object>(Component: React.ComponentType<T & Props>) {
 						trigger: '[data-spoon="start"]',
 						endTrigger: '[data-spoon="end"]',
 						start: 'top top',
-						end: 'bottom top',
+						end: 'bottom center',
 						scrub: 1.5,
 						markers: true,
 					},
