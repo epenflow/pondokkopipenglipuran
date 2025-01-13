@@ -21,5 +21,6 @@ const resources = {
 		// WhoWeAre: dynamic(() => import('~/components/views/who-we-are')),
 		// Grinder: dynamic(() => import('~/components/views/grinder')),
 		// Videos: dynamic(() => import('~/components/views/videos')),
+		Spacer: dynamic(() => import('~/components/views/spacer')),
 	},
 };
