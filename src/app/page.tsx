@@ -10,7 +10,9 @@ interface Props {
 const Page: React.FC<Props> = ({ scope }) => {
 	const { Views } = resources;
 	return (
-		<main ref={scope}>
+		<main
+			ref={scope}
+			className="overflow-x-hidden">
 			{Object.entries(Views).map(([key, View]) => (
 				<View key={key} />
 			))}
