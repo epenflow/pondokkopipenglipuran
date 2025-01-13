@@ -24,6 +24,7 @@ const resources = {
 	Views: {
 		About: dynamic(() => import('~/components/views/about')),
 		Grinder: dynamic(() => import('~/components/views/grinder')),
+		Videos: dynamic(() => import('~/components/views/videos')),
 		Spacer: dynamic(() => import('~/components/views/spacer')),
 	},
 };

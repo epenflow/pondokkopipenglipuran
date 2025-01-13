@@ -1,0 +1,23 @@
+@use 'tailwindcss/components';
+@use '../../../app/settings.scss' as *;
+
+@layer components {
+    .videos {
+        @apply data-[flag-border="true"]:border data-[flag-border="true"]:border-red-500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        @include height-screen;
+
+
+        .video--content {
+            @apply data-[flag-border="true"]:border data-[flag-border="true"]:border-s-sky-500;
+            width: 100%;
+            height: 100svh;
+            position: relative;
+            z-index: 10;
+        }
+
+    }
+}
