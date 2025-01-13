@@ -1,10 +1,7 @@
 'use client';
-import { useGSAP } from '@gsap/react';
-import { gsap, ScrollTrigger } from 'gsap/all';
 import React from 'react';
+import { gsap, useGSAP } from '~/components/layout/gsap';
 import flags from '~/libs/flags';
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export interface Props {
 	scope: React.RefObject<HTMLElement | null>;
