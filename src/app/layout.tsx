@@ -16,14 +16,20 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html
+			lang="en"
+			suppressHydrationWarning>
 			<head>
-				<script
-					src="https://unpkg.com/react-scan/dist/auto.global.js"
-					async
-				/>
+				{process.env.NODE_ENV === 'development' && (
+					<script
+						src="https://unpkg.com/react-scan/dist/auto.global.js"
+						async
+					/>
+				)}
 			</head>
-			<body className={cn('antialiased', fonts.inter.variable, fonts.bricolage.variable)}>
+			<body
+				suppressHydrationWarning
+				className={cn('antialiased', fonts.inter.variable, fonts.bricolage.variable)}>
 				<Layout>{children}</Layout>
 			</body>
 		</html>
