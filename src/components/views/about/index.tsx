@@ -1,10 +1,15 @@
+'use client';
+import type React from 'react';
 import flags from '~/libs/flags';
 import './base.scss';
-const About = () => {
+import hoc, { type Props } from './hoc';
+
+const About: React.FC<Props> = ({ scope }) => {
 	const { heading, texts, description, CSSVariables } = resources;
 
 	return (
 		<section
+			ref={scope}
 			style={CSSVariables}
 			data-flag-border={flags['border']}
 			className="about--section">
@@ -18,11 +23,12 @@ const About = () => {
 					<p className="text--content">{texts[1]}</p>
 				</div>
 				<div className="spoon--image" />
-				<div className="text--content">{description}</div>
+				<p className="text--content">{description}</p>
 			</div>
 		</section>
 	);
 };
+export default hoc(About);
 
 const resources = {
 	heading: `Who Are We?`,
@@ -37,4 +43,3 @@ const resources = {
 		'--spoon-image': `url('https://ucarecdn.com/ea9a2d6c-87a6-4487-b0a3-5f428e33adc7/-/preview/948x185/')`,
 	} as React.CSSProperties,
 };
-export default About;

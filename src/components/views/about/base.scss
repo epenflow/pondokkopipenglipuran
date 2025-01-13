@@ -18,6 +18,14 @@ $image-height: 24rem;
         .content--container {
             @apply font-bricolage space-y-10;
 
+            .text--content {
+                filter: blur($text-blur);
+            }
+
+            .heading--content {
+                filter: blur($text-blur);
+            }
+
             .content--outer {
                 @apply space-y-4;
             }
