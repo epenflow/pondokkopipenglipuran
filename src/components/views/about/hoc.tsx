@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { gsap, useGSAP } from '~/components/layout/gsap';
 import flags from '~/libs/flags';
+import gsap, { useGSAP } from '~/libs/gsap';
 
 export interface Props {
 	scope: React.RefObject<HTMLElement | null>;

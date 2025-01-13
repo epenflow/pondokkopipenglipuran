@@ -19,6 +19,12 @@
         @include heading-primary;
     }
 
+    .spoon--step {
+        @apply data-[flag-border=true]:border data-[flag-border=true]:border-amber-500;
+        height: 24rem;
+        width: 100%;
+    }
+
     @media(screen(2xl)) {
         .content--container {
             max-width: $max-width-content--container;

@@ -36,10 +36,8 @@ export default function hoc<T extends object>(Component: React.ComponentType<T &
 
 		const reveal = contextSafe(() => {
 			if (isActive) {
-				console.log('trigger', timeline);
 				timeline.current?.play();
 			} else {
-				console.log('trigger', timeline);
 				timeline.current?.reverse();
 			}
 		});

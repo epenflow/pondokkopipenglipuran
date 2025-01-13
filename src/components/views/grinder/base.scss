@@ -1,0 +1,32 @@
+@use 'tailwindcss/components';
+@use '../../../app/settings.scss' as *;
+
+@layer components {
+    .grinder {
+        @apply data-[flag-border=true]:border data-[flag-border=true]:border-green-500;
+        @include height-screen;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .content--container {
+            position: relative;
+
+            .grinder--image {
+                height: 24rem;
+                width: 100%;
+                @include background-image(--grinder-image, contain)
+            }
+
+            .spoon--step {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-120deg);
+            }
+        }
+
+
+
+    }
+}

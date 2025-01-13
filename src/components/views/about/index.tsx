@@ -9,6 +9,7 @@ const About: React.FC<Props> = ({ scope }) => {
 
 	return (
 		<section
+			data-spoon="start"
 			ref={scope}
 			style={CSSVariables}
 			data-flag-border={flags['border']}
