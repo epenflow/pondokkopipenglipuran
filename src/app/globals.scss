@@ -10,6 +10,17 @@
         @apply container data-[flag-border=true]:border data-[flag-border=true]:border-y-purple-500;
     }
 
+    .main--container {
+        width: 100%;
+        height: 100%;
+        overflow-y: hidden;
+        scroll-snap-type: y mandatory;
+    }
+
+    .main--container section {
+        scroll-snap-align: start;
+    }
+
     .text--content {
         text-align: justify;
         @include text-primary;

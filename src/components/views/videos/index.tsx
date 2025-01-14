@@ -16,6 +16,7 @@ const Videos: React.FC<Props> = ({ scope }) => {
 			className="videos">
 			<div className="video--container">
 				<iframe
+					data-lenis-prevent
 					className="video--content"
 					src="https://www.youtube.com/embed/H9Ledm14Nw0?si=TkhPPYVcEd8hZ-GS"
 					title="YouTube video player"
@@ -45,8 +46,8 @@ function hoc<T extends object>(Component: React.ComponentType<T & Props>) {
 				) as HTMLIFrameElement;
 
 				gsap.to(video, {
-					width: '50%',
-					height: '50svh',
+					width: '80%',
+					height: '80svh',
 					borderRadius: '20px',
 					ease: 'sine.inOut',
 					scrollTrigger: {

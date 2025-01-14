@@ -12,7 +12,7 @@ const Page: React.FC<Props> = ({ scope }) => {
 	return (
 		<main
 			ref={scope}
-			className="overflow-x-hidden">
+			className="main--container">
 			{Object.entries(Views).map(([key, View]) => (
 				<View key={key} />
 			))}
