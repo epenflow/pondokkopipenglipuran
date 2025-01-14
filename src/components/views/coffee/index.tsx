@@ -20,8 +20,13 @@ const Coffee = () => {
 				<div className="image--container">
 					<div className="image--content" />
 					<div
+						data-spoon="end"
 						data-flag-border={flags['border']}
 						className="spoon--step"
+					/>
+					<div
+						data-flag-border={flags['border']}
+						className="image--overlay"
 					/>
 				</div>
 			</div>

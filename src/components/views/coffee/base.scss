@@ -41,7 +41,7 @@
                 height: 100%;
 
                 .spoon--step {
-                    @apply data-[flag-border]:border data-[flag-border]:border-lime-500 top-[-20%] md:-top-1/2 left-1/2 translate-x-[-30%] rotate-[-80deg];
+                    @apply data-[flag-border]:border data-[flag-border]:border-lime-500 top-[-20%] md:top-[-90%] xl:-top-1/2 left-1/2 translate-x-[-30%] rotate-[-80deg];
                     width: 100%;
                     height: 24rem;
                     position: absolute;
@@ -54,6 +54,12 @@
                     position: relative;
                     z-index: 10;
                     @include background-image(--image-content, contain);
+                }
+
+                .image--overlay {
+                    @apply w-full bottom-0 h-32 md:h-10 data-[flag-border="true"]:border data-[flag-border="true"]:border-red-500;
+                    position: absolute;
+                    background-color: white;
                 }
 
 

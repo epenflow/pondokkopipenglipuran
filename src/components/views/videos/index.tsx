@@ -27,7 +27,6 @@ const Videos: React.FC<Props> = ({ scope }) => {
 			</div>
 			<div
 				data-flag-border={flags['border']}
-				data-spoon="end"
 				className="spoon--step"
 			/>
 		</section>
