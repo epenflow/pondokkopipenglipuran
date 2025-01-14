@@ -1,0 +1,65 @@
+@use 'tailwindcss/components';
+@use '../../../app/settings.scss' as *;
+
+@layer components {
+    .coffee {
+        @apply data-[flag-border="true"]:border data-[flag-border="true"]:border-indigo-500 py-10;
+        @include height-screen;
+
+        .content--container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            @include height-screen;
+            perspective: 100%;
+            position: relative;
+
+            .content--outer {
+                @apply gap-3;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                .heading--content {
+                    @apply text-lg md:text-3xl;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+
+                .button--content {
+                    @apply text-xs;
+                    @include button-style;
+                    padding: $button-padding;
+                }
+
+            }
+
+            .image--container {
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+                .spoon--step {
+                    @apply data-[flag-border]:border data-[flag-border]:border-lime-500 top-[-20%] md:-top-1/2 left-1/2 translate-x-[-30%] rotate-[-80deg];
+                    width: 100%;
+                    height: 24rem;
+                    position: absolute;
+
+                }
+
+                .image--content {
+                    width: 100%;
+                    height: 24rem;
+                    position: relative;
+                    z-index: 10;
+                    @include background-image(--image-content, contain);
+                }
+
+
+            }
+
+
+        }
+    }
+}
